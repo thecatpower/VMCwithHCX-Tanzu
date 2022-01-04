@@ -1,0 +1,33 @@
+variable "org_id" {
+  type = string
+  default = ""
+}
+variable "token" {
+  type = string
+  default = ""
+}
+variable "sddc_id" {
+  type = string
+  default = ""
+}
+
+
+variable "org_id_onprem" {
+  type = string
+  default = ""
+}
+variable "token_onprem" {
+  type = string
+  default = ""
+}
+variable "sddc_id_onprem" {
+  type = string
+  default = ""
+}
+
+
+
+variable "admin_public_ips" {
+  type = list(string) 
+  //default = ""
+}
