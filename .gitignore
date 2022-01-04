@@ -4,3 +4,4 @@
 secrets.tfvars
 .terraform
 *.plan
+.DS_Store
