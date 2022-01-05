@@ -3,14 +3,6 @@ provider "vmc" {
   org_id = var.org_id
 }
 
-# provider "nsx" {
-#  host                 = var.host
-#    vmc_token            = var.vmc_token
-#    allow_unverified_ssl = true
-#    enforcement_point    = "vmc-enforcementpoint"
-#}
-
-# Empty data source defined in order to store the org display name and name in terraform state
 data "vmc_org" "my_org" {
 }
 
