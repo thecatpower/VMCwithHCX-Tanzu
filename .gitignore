@@ -6,3 +6,4 @@ secrets.tfvars
 *.plan
 .DS_Store
 password
+octant
