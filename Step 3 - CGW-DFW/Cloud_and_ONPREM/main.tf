@@ -130,6 +130,7 @@ resource "nsxt_policy_predefined_gateway_policy" "NSX_MGW_RULESET" {
     destination_groups = [
       "/infra/domains/mgw/groups/VCENTER",
       "/infra/domains/mgw/groups/NSX-MANAGER",
+      "/infra/domains/mgw/groups/ESXI",
     ]
     destinations_excluded = false
     direction             = "IN_OUT"

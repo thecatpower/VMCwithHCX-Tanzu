@@ -20,3 +20,11 @@ variable "VMC_subnets" {
     Subnet13dhcp        = "10.10.13.100-10.10.13.200"
   }
 }
+
+
+variable "vc_onprem_user" {default = ""}
+variable "vc_onprem_pw" {default = ""}
+variable "vc_onprem_url" {default = ""}
+variable "vc_cloud_user" {default = ""}
+variable "vc_cloud_pw" {default = ""}
+variable "vc_cloud_url" {default = ""}

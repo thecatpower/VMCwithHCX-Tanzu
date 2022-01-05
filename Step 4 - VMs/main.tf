@@ -1,3 +1,10 @@
+
+#########################################
+#### VMs must be in Templates folder ####
+#### data.sh is a govc example       ####
+#########################################
+
+/*
 terraform {
   backend "local" {
     path = "../../phase3.tfstate"
@@ -16,11 +23,20 @@ data "terraform_remote_state" "phase2" {
     path    = "../../phase2.tfstate"
   }
 }
+*/
 
 provider "vsphere" {
-  user                  = data.terraform_remote_state.phase1.outputs.cloud_username
-  password              = data.terraform_remote_state.phase1.outputs.cloud_password
-  vsphere_server        = data.terraform_remote_state.phase1.outputs.vc_url
+  user                  = var.vc_cloud_user
+  password              = var.vc_cloud_pw
+  vsphere_server        = var.vc_cloud_url
+  allow_unverified_ssl  = true
+}
+
+provider "vsphere" {
+  alias                 = "onprem"
+  user                  = var.vc_onprem_user
+  password              = var.vc_onprem_pw
+  vsphere_server        = var.vc_onprem_url
   allow_unverified_ssl  = true
 }
 
@@ -28,7 +44,7 @@ provider "vsphere" {
 /*================
 Deploy Virtual Machimes
 =================*/
-
+/*
 module "VMs" {
   source = "../VMs"
 
@@ -40,4 +56,4 @@ module "VMs" {
   Subnet13            = data.terraform_remote_state.phase2.outputs.segment13_name
 
  
-}
+}*/
