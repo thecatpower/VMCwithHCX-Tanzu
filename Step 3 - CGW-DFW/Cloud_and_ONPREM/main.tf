@@ -37,6 +37,27 @@ resource "nsxt_policy_group" "MGW_grp-Admins" {
   }
 }
 
+resource "nsxt_policy_group" "MGW_grp-HCX-OnPrem-Public" {
+  display_name = "HCX-OnPrem-Public"
+  description  = ""
+  domain       = "mgw"
+  criteria {
+    ipaddress_expression {
+      ip_addresses = var.onprem_hcx_ips
+    }
+  }
+}
+resource "nsxt_policy_group" "MGW_grp-HCX-Cloud-Public" {
+  display_name = "HCX-Cloud-Public"
+  description  = ""
+  domain       = "mgw"
+  criteria {
+    ipaddress_expression {
+      ip_addresses = var.cloud_hcx_ips
+    }
+  }
+}
+
 resource "nsxt_policy_predefined_gateway_policy" "NSX_MGW_RULESET" {
   path = "/infra/domains/mgw/gateway-policies/default"
   rule {
@@ -122,7 +143,7 @@ resource "nsxt_policy_predefined_gateway_policy" "NSX_MGW_RULESET" {
       "/infra/services/SSH",
       "/infra/services/ICMP_Echo_Request",
     ]
-    source_groups    = [nsxt_policy_group.MGW_grp-Admins.path]
+    source_groups    = [nsxt_policy_group.MGW_grp-Admins.path, nsxt_policy_group.MGW_grp-HCX-OnPrem-Public.path]
     sources_excluded = false
   }
   rule {
@@ -149,6 +170,24 @@ resource "nsxt_policy_predefined_gateway_policy" "NSX_MGW_RULESET" {
     source_groups    = [nsxt_policy_group.MGW_grp-JumpHost.path]
     sources_excluded = false
   }
+  
+  /*rule {
+    action = "ALLOW"
+    destination_groups = [nsxt_policy_group.MGW_grp-HCX-Cloud-Public.path]
+    destinations_excluded = false
+    direction             = "IN_OUT"
+    disabled              = false
+    display_name          = "OUT_HCX (TF)"
+    ip_version            = "IPV4_IPV6"
+    logged                = false
+    profiles              = []
+    scope = [
+      "/infra/labels/mgw",
+    ]
+    services = []
+    source_groups    = [nsxt_policy_group.MGW_grp-HCX-OnPrem-Public.path]
+    sources_excluded = false
+  }*/
 }
 
 ################CLOUD COMPUTE GATEWAY################
@@ -347,6 +386,29 @@ resource "nsxt_policy_group" "MGW-OP_grp-Admins" {
   }
 }
 
+resource "nsxt_policy_group" "MGW-OP_grp-HCX-OnPrem-Public" {
+  provider = nsxt.onprem
+  display_name = "HCX-OnPrem-Public"
+  description  = ""
+  domain       = "mgw"
+  criteria {
+    ipaddress_expression {
+      ip_addresses = var.onprem_hcx_ips
+    }
+  }
+}
+resource "nsxt_policy_group" "MGW-OP_grp-HCX-Cloud-Public" {
+  provider = nsxt.onprem
+  display_name = "HCX-Cloud-Public"
+  description  = ""
+  domain       = "mgw"
+  criteria {
+    ipaddress_expression {
+      ip_addresses = var.cloud_hcx_ips
+    }
+  }
+}
+
 resource "nsxt_policy_predefined_gateway_policy" "NSX_MGW_RULESET-OP" {
   provider = nsxt.onprem
   path = "/infra/domains/mgw/gateway-policies/default"
@@ -436,6 +498,43 @@ resource "nsxt_policy_predefined_gateway_policy" "NSX_MGW_RULESET-OP" {
     source_groups    = [nsxt_policy_group.MGW-OP_grp-Admins.path]
     sources_excluded = false
   }
+  rule {
+    description           = "HCX Outbound"
+    action                = "ALLOW"
+    destination_groups    = []
+    destinations_excluded = false
+    direction             = "IN_OUT"
+    disabled              = false
+    display_name          = "HCX Outbound Rule"
+    ip_version            = "IPV4_IPV6"
+    logged                = false
+    profiles              = []
+    scope = [
+      "/infra/labels/mgw",
+    ]
+    services = []
+    source_groups = [
+      "/infra/domains/mgw/groups/HCX",
+    ]
+    sources_excluded = false
+  }
+  /*rule {
+    action = "ALLOW"
+    destination_groups = [nsxt_policy_group.MGW-OP_grp-HCX-Cloud-Public.path]
+    destinations_excluded = false
+    direction             = "IN_OUT"
+    disabled              = false
+    display_name          = "OUT_HCX (TF)"
+    ip_version            = "IPV4_IPV6"
+    logged                = false
+    profiles              = []
+    scope = [
+      "/infra/labels/mgw",
+    ]
+    services = []
+    source_groups    = [nsxt_policy_group.MGW-OP_grp-HCX-OnPrem-Public.path]
+    sources_excluded = false
+  }*/
 }
 
 ################COMPUTE GATEWAY################
@@ -450,6 +549,17 @@ resource "nsxt_policy_group" "CGW-OP_grp-Admins" {
     }
   }
 }
+resource "nsxt_policy_group" "CGW-OP_grp-JumpHost" {
+  provider = nsxt.onprem
+  display_name = "JumpHost"
+  description  = ""
+  domain       = "cgw"
+  criteria {
+    ipaddress_expression {
+      ip_addresses = ["192.168.1.2"]
+    }
+  }
+}
 resource "nsxt_policy_predefined_gateway_policy" "NSX_CGW_RULESET-OP" {
   provider = nsxt.onprem
   path = "/infra/domains/cgw/gateway-policies/default"
@@ -458,5 +568,22 @@ resource "nsxt_policy_predefined_gateway_policy" "NSX_CGW_RULESET-OP" {
     nsx_id       = "default-vti-rule"
     action       = "DROP"
     scope        = ["/infra/labels/cgw-vpn"]
+  }
+  rule {
+    scope = ["/infra/labels/cgw-all"]
+    display_name  = "JumpHostToRoW (TF)"
+    source_groups = [nsxt_policy_group.CGW-OP_grp-JumpHost.path]
+    //destination_groups =[nsxt_policy_group.CGW_grp-JumpHost.path] 
+    services      = [
+      "/infra/services/HTTPS",
+      "/infra/services/HTTP",
+      "/infra/services/ICMP-ALL",
+      "/infra/services/DNS-UDP",
+      "/infra/services/NTP",
+      "/infra/services/SSH",
+    ]
+    logged        = true
+    log_label     = ""
+    action        = "ALLOW"
   }
 }
