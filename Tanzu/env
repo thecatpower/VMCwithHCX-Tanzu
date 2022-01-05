@@ -1,6 +1,6 @@
 ### Common
 export TKIA_DIR=~/tkia
-export DOMAIN=cpod-devready.az-fkd.cloud-garage.net
+export DOMAIN=vmc-tanzu.io
 export SUBNET=172.17.8
 export BITS=/data/BITS
 . ${TKIA_DIR}/password
@@ -9,6 +9,9 @@ export BITS=/data/BITS
 export SUPERVISOR=k8s.Cluster-1.vcenter.sddc-18-135-174-15.vmwarevmc.com
 #export TANZU_USER=administrator@${DOMAIN}
 export TANZU_USER=cloudadmin@vmc.local
+
+### HARBOR
+export HARBOR=harbor.${DOMAIN}
 
 ### TKGm
 export TKGM_RELEASE="v1.4.0"
