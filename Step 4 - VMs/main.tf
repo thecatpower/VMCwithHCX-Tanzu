@@ -1,29 +1,8 @@
 
-#########################################
-#### VMs must be in Templates folder ####
-#### data.sh is a govc example       ####
-#########################################
-
-/*
-terraform {
-  backend "local" {
-    path = "../../phase3.tfstate"
-  }
-}
-# Import the state from phase 1and 2 and read the outputs
-data "terraform_remote_state" "phase1" {
-  backend = "local" 
-  config = {
-    path    = "../../phase1.tfstate"
-  }
-}
-data "terraform_remote_state" "phase2" {
-  backend = "local" 
-  config = {
-    path    = "../../phase2.tfstate"
-  }
-}
-*/
+##############################################
+#### VMs must be in Templates folder      ####
+#### data.sh is a govc example to do that ####
+##############################################
 
 provider "vsphere" {
   user                  = var.vc_cloud_user
@@ -32,7 +11,6 @@ provider "vsphere" {
   allow_unverified_ssl  = true
 }
 
-/*
 provider "vsphere" {
   alias                 = "onprem"
   user                  = var.vc_onprem_user
@@ -40,22 +18,6 @@ provider "vsphere" {
   vsphere_server        = var.vc_onprem_url
   allow_unverified_ssl  = true
 }
-*/
-
-/*================
-Deploy Virtual Machimes
-=================*/
-/*
-module "VMs" {
-  source = "../VMs"
-
-  data_center         = var.data_center
-  cluster             = var.cluster
-  workload_datastore  = var.workload_datastore
-  compute_pool        = var.compute_pool
-  Subnet12            = data.terraform_remote_state.phase2.outputs.segment12_name
-  Subnet13            = data.terraform_remote_state.phase2.outputs.segment13_name
-}*/
 
 data "vsphere_datacenter" "cloud_dc" {
   name          = var.cloud_data_center
@@ -104,10 +66,9 @@ data "vsphere_network" "onprem_network1" {
 }
 */
 
-
-/*=================================================================
+/*======================================================
 Get Templates data
-==================================================================*/
+========================================================*/
 
 data "vsphere_virtual_machine" "cloud_VM_BE" {
   name          = var.cloud_VM_BE
@@ -119,7 +80,9 @@ data "vsphere_virtual_machine" "cloud_VM_BE" {
   datacenter_id = data.vsphere_datacenter.onprem_dc.id
 }*/
 
-# ================================================
+/*======================================================
+Deploy Templates to VMs
+========================================================*/
 resource "vsphere_virtual_machine" "cloud-vm1" {
   name             = "terraform-BE"
   resource_pool_id = data.vsphere_resource_pool.cloud_pool.id
@@ -149,15 +112,12 @@ resource "vsphere_virtual_machine" "vm2" {
   name             = "terraform-photo"
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
-
   num_cpus = 2
   memory   = 1024
   guest_id = "ubuntu64Guest"
-
   network_interface {
     network_id = data.vsphere_network.network13.id
   }
-
   disk {
     label = "disk0"
     size  = 20
