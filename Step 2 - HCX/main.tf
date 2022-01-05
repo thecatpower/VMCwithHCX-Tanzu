@@ -37,6 +37,17 @@ provider "hcx" {
     vmc_token   = "NJ8ZoAEmcY1FRHIhjlALItUL5VPqk5pidC5z3R9TTNvaypNNFz6Sqa9rkJH1FJiS"
 }
 
+/*
+// Site Pairing from On-prem to Cloud --> C2C
+resource "hcx_site_pairing" "C2C" {
+    provider = hcx.onprem
+    url         = hcx_vmc.vmc_xpday.cloud_url
+    username    = "cloudadmin@vmc.local"
+    password    = "kAHyG8Ipo3Y+-Xw"
+}
+/*
+
+
 
 /*
 // Site Pairing with the other cloud - Remote is HCX-C2C-2
