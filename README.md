@@ -79,7 +79,7 @@ Step 5 - load and scale app with `./scale.sh` inspect the result in `octant` if 
 
 ![acme-octant](img/acme-octant.png)
 
-Step 6 - Play with kubeapp to deploy and manage lifecycle of apps
+Step 6 - Play with kubeapps to deploy and manage lifecycle of apps
 
 ![kubeapps](img/kubeapps.png)
 
