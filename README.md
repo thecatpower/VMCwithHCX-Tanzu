@@ -89,7 +89,7 @@ Step 2 - Push containers to HARBOR with `./push.sh`
 
 Step 3 - Deploy components with ./deploy.sh
 
-Step 4 - Inspect deployment with `kubectl -n acme get all,networlpolicy` or with `octant`
+Step 4 - Inspect deployment with `kubectl -n acme get all,networkpolicy` or with `octant`
 
 ![acme-in-kube](img/acme-in-kube.png)
 
