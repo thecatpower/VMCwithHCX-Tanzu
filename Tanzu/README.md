@@ -1,1 +1,1 @@
-This part of repo is inspired of [TKIA](https://github.com/bdereims/tkia).
+This part of the repo is inspired by [TKIA](https://github.com/bdereims/tkia).
