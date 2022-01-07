@@ -65,6 +65,24 @@ This example is volontary simple, easy to modify, esay to understand. We want to
 
 `env` file contains all variables used to build and run this app. You can modify it in your convenience.
 
+Main goal is to move app from VMs to Pods in kube.
+
+
+
+The source:
+
+![acme-in-kube](img/acme-in-vms.png)
+
+
+
+The target:
+
+![acme-in-kube](img/acme-in-pods.png)
+
+
+
+<u>Let's do that:</u>
+
 Step 1 - Move to `VMs2PODs` dir, Build app containers with `./build.sh`
 
 Step 2 - Push containers to HARBOR with `./push.sh`
