@@ -6,35 +6,29 @@ terraform {
   }
 }
 
-// Provider config - This cloud is Cloud
+
 ################### CLOUD ###################
-resource "hcx_vmc" "vmc_xpday" {  
-    sddc_name   = "XP_DAY_SDDC"
-    sddc_id = "2d166104-6249-42f3-b265-96f7a01d0198"
-}
-
-/*locals {
-    hcx_cloud1_url = hcx_vmc.vmc_xpday.cloud_url
-}*/
-
-// Provider config - Cloud instance
 provider hcx {
    //hcx         = local.hcx_cloud1_url
    //username    = "cloudadmin@vmc.local"
    //password    = "kAHyG8Ipo3Y+-Xw"
-   vmc_token   = "G1JznxkTFqqokK8Y1gy1mz2Fi5LtPJQBEaD4t9v71iaMjZqlmFVi99xv7Tacr2tr"
+   vmc_token   = var.api_token
+}
+resource "hcx_vmc" "vmc_xpday" {  
+    //sddc_name   = var.sddc_name
+    sddc_id = var.sddc_id
 }
 
-################### ONPREM ###################
-resource "hcx_vmc" "vmc_onprem" {  
-    provider = hcx.onprem
-    //sddc_name   = "XP_DAY_ONPREM"
-    sddc_id = "06f2fc6c-b15a-460f-ba58-6e4b403861dd"
-}
-// Provider config - On PRem instance
+
+################### TARGET - CLOUD ###################
 provider "hcx" {
-    alias  = "onprem"
-    vmc_token   = "NJ8ZoAEmcY1FRHIhjlALItUL5VPqk5pidC5z3R9TTNvaypNNFz6Sqa9rkJH1FJiS"
+    alias  = "target"
+    vmc_token   = var.api_token_target
+}
+resource "hcx_vmc" "vmc_xpday_target" {  
+    provider = hcx.target
+    //sddc_name   = "XP_DAY_ONPREM"
+    sddc_id = var.sddc_id_target
 }
 
 /*
