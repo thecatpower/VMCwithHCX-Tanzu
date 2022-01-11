@@ -26,7 +26,7 @@ provider "hcx" {
 }
 resource "hcx_vmc" "vmc_xpday_target" {  
     provider = hcx.target
-    //sddc_name   = "XP_DAY_ONPREM"
+    //sddc_name   = var.sddc_name_target
     sddc_id = var.sddc_id_target
 }
 
