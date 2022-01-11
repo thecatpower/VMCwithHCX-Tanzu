@@ -7,7 +7,7 @@ terraform {
 }
 
 
-################### CLOUD ###################
+################### SOURCE ###################
 provider hcx {
    //hcx         = local.hcx_cloud1_url
    //username    = "cloudadmin@vmc.local"
@@ -19,8 +19,7 @@ resource "hcx_vmc" "vmc_xpday" {
     sddc_id = var.sddc_id
 }
 
-
-################### TARGET - CLOUD ###################
+################### TARGET ###################
 provider "hcx" {
     alias  = "target"
     vmc_token   = var.api_token_target
