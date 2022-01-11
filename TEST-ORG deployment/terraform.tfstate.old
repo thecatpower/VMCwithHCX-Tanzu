@@ -1,0 +1,179 @@
+{
+  "version": 4,
+  "terraform_version": "1.0.9",
+  "serial": 3,
+  "lineage": "16d55f51-e725-916c-b69a-15c5a0afe51c",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "data",
+      "type": "vmc_connected_accounts",
+      "name": "my_accounts",
+      "provider": "provider[\"registry.terraform.io/terraform-providers/vmc\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "account_number": "614055364343",
+            "id": "7a39175e-e523-3165-9631-e650ed8ac8c4",
+            "provider_type": "AWS"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "vmc_customer_subnets",
+      "name": "my_subnets",
+      "provider": "provider[\"registry.terraform.io/terraform-providers/vmc\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "connected_account_id": "7a39175e-e523-3165-9631-e650ed8ac8c4",
+            "customer_available_zones": [
+              "eu-west-2a",
+              "eu-west-2b"
+            ],
+            "force_refresh": null,
+            "id": "b7793958-b6b6-4916-a008-40c5c47ec24c-7a39175e-e523-3165-9631-e650ed8ac8c4",
+            "ids": [
+              "subnet-06e1316900f680313",
+              "subnet-04b1719642073822e",
+              "subnet-0405d06ab1630b14b",
+              "subnet-05642d6dc170885e9",
+              "subnet-009e197da9029be44",
+              "subnet-00f1dc2f1f622044c",
+              "subnet-0c25a224277c44a1d",
+              "subnet-0d274a39aa58d45b4",
+              "subnet-05d521b108b57bda6",
+              "subnet-03199793ab08c54c5",
+              "subnet-0be313659b63301d1",
+              "subnet-0ec55fef716976f56",
+              "subnet-c22786b8",
+              "subnet-b9d4b1d0",
+              "subnet-68ff0824",
+              "subnet-029a131dba7f47e24",
+              "subnet-02ae0b37c0c0498eb",
+              "subnet-0dea93a80e357a620",
+              "subnet-0420db64fba86a13c",
+              "subnet-0119a76b36f2dc258",
+              "subnet-06488f72c2ac3fca1",
+              "subnet-04e916f15b4084950",
+              "subnet-0bbe80680ac5374b7",
+              "subnet-0a60c70b3b1e3338b",
+              "subnet-0554e8d96ccf6dd7f",
+              "subnet-0552d3b4d8ad7c33a",
+              "subnet-0821fcd7b2b5c25a1",
+              "subnet-0598dcb5f1330dc99",
+              "subnet-014a14be1bffd7852",
+              "subnet-04e0188352838d9df",
+              "subnet-0ca50754cb04fd500"
+            ],
+            "instance_type": null,
+            "num_hosts": null,
+            "region": "EU_WEST_2",
+            "sddc_id": null,
+            "sddc_type": null,
+            "vpc_map": null
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "vmc_org",
+      "name": "my_org",
+      "provider": "provider[\"registry.terraform.io/terraform-providers/vmc\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "display_name": "VMC-SET-TEST",
+            "id": "b7793958-b6b6-4916-a008-40c5c47ec24c",
+            "name": "jn37ot0t"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "vmc_sddc",
+      "name": "sddc_xpday",
+      "provider": "provider[\"registry.terraform.io/terraform-providers/vmc\"]",
+      "instances": [
+        {
+          "status": "tainted",
+          "schema_version": 0,
+          "attributes": {
+            "account_link_sddc_config": [
+              {
+                "connected_account_id": "7a39175e-e523-3165-9631-e650ed8ac8c4",
+                "customer_subnet_ids": [
+                  "subnet-00f1dc2f1f622044c"
+                ]
+              }
+            ],
+            "availability_zones": null,
+            "cloud_password": null,
+            "cloud_username": null,
+            "cluster_id": null,
+            "cluster_info": null,
+            "delay_account_link": false,
+            "deployment_type": "SingleAZ",
+            "edrs_policy_type": null,
+            "enable_edrs": null,
+            "host_instance_type": "I3_METAL",
+            "id": "40393a83-9893-463f-81a0-b8f68069580c",
+            "intranet_mtu_uplink": 1500,
+            "max_hosts": null,
+            "microsoft_licensing_config": [
+              {
+                "mssql_licensing": "DISABLED",
+                "windows_licensing": "DISABLED"
+              }
+            ],
+            "min_hosts": null,
+            "nsxt_cloudadmin": null,
+            "nsxt_cloudadmin_password": null,
+            "nsxt_cloudaudit": null,
+            "nsxt_cloudaudit_password": null,
+            "nsxt_private_ip": null,
+            "nsxt_private_url": null,
+            "nsxt_reverse_proxy_url": null,
+            "nsxt_ui": null,
+            "num_host": 1,
+            "provider_type": "AWS",
+            "region": "EU_WEST_2",
+            "sddc_name": "XP_DAY_SDDC",
+            "sddc_size": null,
+            "sddc_state": null,
+            "sddc_template_id": null,
+            "sddc_type": "1NODE",
+            "size": "medium",
+            "skip_creating_vxlan": false,
+            "sso_domain": "vmc.local",
+            "storage_capacity": null,
+            "timeouts": {
+              "create": "300m",
+              "delete": "180m",
+              "update": "300m"
+            },
+            "vc_url": null,
+            "vpc_cidr": "10.2.0.0/23",
+            "vxlan_subnet": "10.3.0.0/24"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwMCwiZGVsZXRlIjoxMDgwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "data.vmc_connected_accounts.my_accounts",
+            "data.vmc_customer_subnets.my_subnets"
+          ]
+        }
+      ]
+    }
+  ]
+}

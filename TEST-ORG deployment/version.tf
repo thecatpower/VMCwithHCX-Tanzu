@@ -1,9 +1,10 @@
 terraform {
   required_providers {
+    /*
     nsx = {
       source = "vmware/nsxt"
     }
-    
+    */
     vmc = {
       source = "terraform-providers/vmc"
     }
