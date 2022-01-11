@@ -6,7 +6,6 @@ terraform {
   }
 }
 
-
 ################### SOURCE ###################
 provider hcx {
    //hcx         = local.hcx_cloud1_url
