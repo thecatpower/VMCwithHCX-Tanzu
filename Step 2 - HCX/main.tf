@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    hcx = {
-      source = "adeleporte/hcx"
-    }
-  }
-}
-
 ################### SOURCE ###################
 provider hcx {
    //hcx         = local.hcx_cloud1_url
