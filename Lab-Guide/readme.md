@@ -1,4 +1,4 @@
-Introduction
+# Introduction
 
 The VMC with Tanzu Experience Day (VMCwithTanzu)workshop is an opportunity to test this unique combination of services that will help you to accelerate your app modernization. This workshop in based on a classroom model with VMware Cloud on AWS and Tanzu experts who support you during hands on lab exercises to understand and gain experience with these VMware Cloud services.
 
@@ -11,4 +11,14 @@ Finally we will continue with the Modern app part of this workshop by activating
 
 Enjoy!
 
+
+# Lab Environment introduction
+2 different environments at your disposal both hosted on VMware Cloud on AWS, where first will act as the source datacenter, the second will be the target where we will migrate workloads to modernize an application.
+VMware team will provide all details about these environments (names, URLs, IP addresses...), please keep it or feel free ask to ask if not received.
+
+
+# Prerequisites:
+- A computer of course :) with a browser (Google Chrome preferred) 
+- SSH Client (ie: Putty)
+- A MyVMware account is required to access VMware Cloud Console otherwise you'll be asked to create one, this is pretty simple and quick (email, first & last name)
 
