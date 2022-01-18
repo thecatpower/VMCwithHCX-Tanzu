@@ -14,13 +14,28 @@ Enjoy!
 
 # Lab Environment introduction
 
-2 different environments at your disposal both hosted on VMware Cloud on AWS, where first will act as the source datacenter, the second will be the target where we will migrate workloads to modernize an application.
+2 different environments at your disposal both hosted on VMware Cloud on AWS, where first will act as the source datacenter, while the second will be the target where you will migrate workloads to modernize later the application.
+There's a jumphost VM hosted on target SDDC dedicated to internal tests or run some of the labs
+
+Jumphost VM: 
+Name: grease-monkey
+IP Address: 
+login:
+password: 
+
 VMware team will provide all details about these environments (names, URLs, IP addresses...), please keep it or feel free ask to ask if not received.
 
 Source SDDC name:
 Target SDDC name:
 Jumphost VM name:
 
+All attendees will work in different groups (between 2 and 3 attendees per group), workshop, VMware team will define group and will communicate your membership. Each group will work with a dedicated VM environment during labs, each folder will reflect group assignment following this taxonomy:
+Group01
+Group02
+Group03
+Group04
+Group05
+Group06 
 
 # Prerequisites:
 - A computer of course :) with a browser (Google Chrome preferred) 
@@ -30,7 +45,7 @@ Jumphost VM name:
 
 
 # Lab01: Know the application
-
+The application used during this workshop is a 2 tier app composed of a front-end VM (NGINX with PHP) and a back-end VM (MariaDB)  
 
 
 # Lab02: Workload Migration
