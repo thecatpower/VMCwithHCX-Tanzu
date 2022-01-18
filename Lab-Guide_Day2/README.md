@@ -7,7 +7,7 @@ You will use user `roomX` / `roomX` (X is an integer) on jumpbox call grease-mon
 is to run 2 distinct pods instead of a VM: nginx + phpfm. The intend to do that is to leverage k8s capabilities to easyly scale application depending on number of request.
 
 
-![acme-in-kube](img/acme-in-pods.png)
+![acme-in-kube](../img/acme-in-pods.png)
 
 
 # Lab201: Discovery and setup
@@ -28,7 +28,7 @@ If you get lost or confused, reclone repo in order to start from scratch
 It's time to build application.
 
 # Lab202: Create registry project
-Sign up with your creds `roomX` / `roomX` to ![VMware Harbor](https://registry.cloud-garage.net).
+Sign up with your creds `roomX` / `roomX` to [VMware Harbor](https://registry.cloud-garage.net).
 Log into and create a project with the name of your user, don't forget to set it public.
 
 # Lab203: Build the app
