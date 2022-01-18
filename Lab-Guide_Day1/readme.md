@@ -18,24 +18,24 @@ Enjoy!
 There's a jumphost VM hosted on target SDDC dedicated to internal tests or run some of the labs
 
 Jumphost VM: 
-Name: grease-monkey
-IP Address: 
-login:
-password: 
+- Name: grease-monkey
+- IP Address: 
+- Login:
+- Password: 
 
 VMware team will provide all details about these environments (names, URLs, IP addresses...), please keep it or feel free ask to ask if not received.
 
-Source SDDC name:
-Target SDDC name:
-Jumphost VM name:
+- Source SDDC name:
+- Target SDDC name:
+- Jumphost VM name:
 
 All attendees will work in different groups (between 2 and 3 attendees per group), workshop, VMware team will define group and will communicate your membership. Each group will work with a dedicated VM environment during labs, each folder will reflect group assignment following this taxonomy:
-Group01
-Group02
-Group03
-Group04
-Group05
-Group06 
+- Group01
+- Group02
+- Group03
+- Group04
+- Group05
+- Group06 
 
 # Prerequisites:
 - A computer of course :) with a browser (Google Chrome preferred) 
