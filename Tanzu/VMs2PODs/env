@@ -2,9 +2,9 @@ encode() {
 	printf "${1}" | base64
 }
 
-export FQDN=harbor.vmc-tanzu.io
-export LIBRARY=${FQDN}/acme
-export NAMESPACE="acme"
+export FQDN=registry.cloud-garage.net
+export LIBRARY=${FQDN}/${USER}
+export NAMESPACE="${USER}"
 ### PASSWORD='VMware1!'
 export PASSWORD="Vk13YXJlMSE="
 DB_USER=$(encode root)
