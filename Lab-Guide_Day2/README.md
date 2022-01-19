@@ -77,10 +77,24 @@ Load the app and discover how k8s scale deployments: `./scale_in_pods.sh`.
 Tips: there is a namespace that's running Octant.
 
 
-# Lab XX: Tanzu Management 
+# Lab206: Tanzu Management 
+Tanzu offer a flexible way to manage k8s cluster, scale out/in clusters is an exmaple. Because k8s clusters are operated by k8s, all is yaml.
+Go to `~/VMCwithHCX-Tanzu/Tanzu/tkgs/guest-cluster` dir and discover how we deploy cluster with `create-managed-cluster.yaml`.
+What do you notice in this yaml?
+
+t's needed to be login into suprervisor cluster and workload cluster, there are scripts for that in `~/VMCwithHCX-Tanzu/Tanzu`: `./login.sh` and `login-guest-cluster.sh`.
+
+It's possible to directly manage cluster with `tanzukubernetesclusters.run.tanzu.vmware.com` object: `kubectl get tkc -A`.
+In place k8s release upgrade is possible. To do that, edit tkc item and change version accordingly to what Tanzu offer, for example: `kubectl -n tkgs edit tkc acme` and replace version.
+
+!!! Don't modify relrease right now !!! 
 
 
-# Lab XX: Tanzu Monitoring
+# Lab207: Tanzu Monitoring
+Tanzu offer prometheus/grafana to monitor k8s cluster and apps. There is also Tanzu Observability, SaaS solution offering monitoring/distributed tracing/correlated events.
+Let's discover how to attach a cluster to TO and look at dashboard.
 
-
-# Lab XX: Switching back-end VM to AWS native services
+# Lab208: Switching back-end VM to AWS native services
+The goal is to replace VM database by RDS instance in aws.
+So, create your own RDS instance. Export/Import mariadb schema in RDS. Modify env file to point to RDS instance. Rebuild/repush/redeploy app or modify your existing running app.
+Is a big deal to use managed service in aws? what's about performance and lifecycle management? What's about the cost?
