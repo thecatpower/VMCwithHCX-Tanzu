@@ -10,6 +10,24 @@ is to run 2 distinct pods instead of a VM: nginx + phpfm. The intend to do that 
 ![acme-in-kube](../img/acme-in-pods.png)
 
 
+# Lab200: VMC + Tanzu
+We have initiated TKG deployment in this VMC instance, roughly similar to on-premise installation.
+Navigate through UI, discover how Tanzu manage K8S Workload Cluster: supervisor cluster namespaces, how to limit CPU/Memory/Storage per namespace & Cloud Native Storage. 
+Tanzu offer SSO between VCSA and Kubernetes.
+
+
+Worload Management Menu in VCSA:	
+![Workload Management in VCSA](../img/WorkloadManagement.png)
+
+
+Supervisor Namespace Management:
+![namespace](../img/namespace.png)
+
+
+Cloud Native Storage in VCSA:
+![CNS](../img/CNS.png)
+
+
 # Lab201: Discovery and setup
 Get you familliar with jumpbox with proxy socks, use ssh or ptty: `ssh -D 9090 roomX@grease-monkey-vmc.cloud-garage.net`
 Clone the git repo in home: `git clone https://github.com/cdebosc/VMCwithHCX-Tanzu.git`
@@ -19,9 +37,9 @@ Setup your favorite browser to use local proxy socks: settings -> advanced -> sy
 
 test it in running local nginx container on grease-monkey and access it:
 `docker run -d -p $(expr $( ech: ${USER} | sed "s/room//") + 8080):80 --name=${USER} nginx`
-You should able to visit http://grease-monkey:[your port number]
+You should able to visit http://grease-monkey:[your_port_number]
 
-As a DevSecOps team member you have access to source code of the app. Go to `~/VMCwithHCX-Tanzu/Tanzu/VMs2POD` directory.
+As a DevSecOps team member you have access to source code of the app. Go to `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs` directory.
 If you are brave enough, you can modify some artefacts like: `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs/containers/html/index.html`  
 If you get lost or confused, reclone repo in order to start from scratch
 
@@ -29,16 +47,16 @@ It's time to build application.
 
 # Lab202: Create registry project
 Sign up with your creds `roomX` / `roomX` to [VMware Harbor](https://registry.cloud-garage.net).
-Log into and create a project with the name of your user, don't forget to set it public.
+Log into and create project with name of your user, don't forget to set it public.
 
 # Lab203: Build the app
 Go to `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs` directory and inspect/modify `env` file specifying all settings.
-Now, we will build app containers with the help of `./build.sh`.
+Now, were going to build app containers with the help of `./build.sh`.
 Inspect your fresh container images: `docker images`.
 
 # Lab204: Push container images to registry
 Log yourself to registry: `docker login registry.cloud-garage.net`, your creds are quite obvious.
-Push to reg with: `./push.sh`.
+Push to reg with: `./push.sh`. You are invited to discover `containers/Makefile`.
 Inspect the result into Harbor. Launch a vulnerability scan against freshly pushed images, what is the result?
 Modify your project to automaticaly scan any new pushed images and avoid to deploy ones low and higher vulnerability severities.
 
@@ -51,7 +69,10 @@ Inspect furthermore with: `kubectl -n ${USER} get networkpolicies,hpa`.
 
 Try to access app from your favorite browser. Does it work?
 
-Load the app and discover how k8s scale deployments: `./scale_test.sh`.
+Try to run busybox pod in your namespace and reach php page: `kubectl -n ${USER} run -it --rm busybox --image=busybox -- sh` and ``
+What is the result? Why?
+
+Load the app and discover how k8s scale deployments: `./scale_in_pods.sh`.
 
 Tips: there is a namespace that's running Octant.
 
