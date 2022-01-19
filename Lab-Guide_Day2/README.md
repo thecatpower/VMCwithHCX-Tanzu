@@ -16,7 +16,7 @@ Navigate through UI, discover how Tanzu manage K8S Workload Cluster: supervisor 
 Tanzu offer SSO between VCSA and Kubernetes.
 
 
-Worload Management Menu in VCSA:	
+Worload Management Menu in VCSA:<br>
 ![Workload Management in VCSA](../img/WorkloadManagement.png)
 
 
