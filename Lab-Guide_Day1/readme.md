@@ -1,6 +1,6 @@
 # Introduction
 
-The VMC with Tanzu Experience Day (VMCwithTanzu)workshop is an opportunity to test this unique combination of services that will help you to accelerate your app modernization. This workshop in based on a classroom model with VMware Cloud on AWS and Tanzu experts who support you during hands on lab exercises to understand and gain experience with these VMware Cloud services.
+The VMC with Tanzu Experience Day (VMCwithTanzu) workshop is an opportunity to test this unique combination of services that will help you to accelerate your app modernization. This workshop in based on a classroom model with VMware Cloud on AWS and Tanzu experts who support you during hands on lab exercises to understand and gain experience with these VMware Cloud services.
 
 This Experience day is split into 2 sessions where we will discover VMware Cloud on AWS interface more generally and then have a look on the Lab prepared for you: what is the application, environment, and so on.
 
@@ -23,7 +23,7 @@ Jumphost VM:
 - Login:
 - Password: 
 
-VMware team will provide all details about these environments (names, URLs, IP addresses...), please keep it or feel free ask to ask if not received.
+VMware team will provide all details about these environments (names, URLs, IP addresses...), please keep it or feel free to ask if not received.
 
 - Source SDDC name:
 - Target SDDC name:
@@ -40,12 +40,12 @@ All attendees will work in different groups (between 2 and 3 attendees per group
 # Prerequisites:
 - A computer of course :) with a browser (Google Chrome preferred) 
 - SSH Client (ie: Putty)
-- A MyVMware account is required to access VMware Cloud Console otherwise you'll be asked to create one, this is pretty simple and quick (email, first & last name). Once you provided your account email address you'll receive an email invitation to join an Organization called "Tanzu-VMC Exp Day", so please click on the link to join it and start labs.
--  
+- A Customer Connect previously known as "MyVMware" account is required to access VMware Cloud Console otherwise you'll be asked to create one, this is pretty simple and quick (email, first & last name). To do so, follow the link to Customer Connect portal : https://customerconnect.vmware.com/account-registration. 
+Once you provided your account email address you'll receive an email invitation to join an Organization called "Tanzu-VMC Exp Day", so please click on the link to join it and start labs.
 
 
 # Lab01: Know the application
-The application used during this workshop is a 2 tier app composed of a front-end VM (NGINX with PHP) and a back-end VM (MariaDB)  
+The application used during this workshop is a 2-tier app composed of a front-end VM (NGINX with PHP) and a back-end VM (MariaDB).  
 
 
 # Lab02: Workload Migration
