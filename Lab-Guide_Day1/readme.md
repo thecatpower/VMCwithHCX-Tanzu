@@ -15,27 +15,28 @@ Enjoy!
 # Lab Environment introduction
 
 2 different environments at your disposal both hosted on VMware Cloud on AWS, where first will act as the source datacenter, while the second will be the target where you will migrate workloads to modernize later the application.
-There's a jumphost VM hosted on target SDDC dedicated to internal tests or run some of the labs
+![image](https://user-images.githubusercontent.com/12640326/150738653-57202d6d-4b0b-4586-84f4-8da22ec97dd1.png)
 
-Jumphost VM: 
-- Name: grease-monkey
+
+VMware team will provide all details about these environments (names, URLs, IP addresses...), please keep it or feel free to ask if not received.
+
+- Source SDDC name: Source-SDDC
+- Target SDDC name: Target-SDDC
+
+All attendees will work in different groups (between 2 and 3 attendees per group), that VMware team will define and will communicate details about membership. Each group will work with a dedicated VM environment during labs, each folder will reflect group assignment following this order:
+- Group01: front-end01 VM
+- Group02: front-end02 VM
+- Group03: front-end03 VM
+- Group04: front-end04 VM
+- Group05: front-end05 VM
+- Group06: front-end06 VM
+
+Finally, in the target SDDC, you will use a jump host VM called "grease-monkey" to achieve some exercises.
+- Jumphost VM name: grease-monkey
 - IP Address: 
 - Login:
 - Password: 
 
-VMware team will provide all details about these environments (names, URLs, IP addresses...), please keep it or feel free to ask if not received.
-
-- Source SDDC name:
-- Target SDDC name:
-- Jumphost VM name:
-
-All attendees will work in different groups (between 2 and 3 attendees per group), workshop, VMware team will define group and will communicate your membership. Each group will work with a dedicated VM environment during labs, each folder will reflect group assignment following this taxonomy:
-- Group01
-- Group02
-- Group03
-- Group04
-- Group05
-- Group06 
 
 # Prerequisites:
 - A computer of course :) with a browser (Google Chrome preferred) 
@@ -47,12 +48,22 @@ Once you provided your account email address you'll receive an email invitation 
 # Lab01: Know the application
 The application used during this workshop is a 2-tier app composed of a front-end VM (NGINX with PHP) and a back-end VM (MariaDB).  
 
+Each group of attendees has its own front-end VM (front-end01 to 06 VM) located into separated vCenter folder. The back-end VM is the same for all groups and will be shared among them.
 
-# Lab02: Workload Migration
+Browse within the source vCenter to discover these resources. For this you need to be authenticated to VMware Cloud Console and click on the "Source DC" name and then click on "open vCenter"  on the right top of the screen and use "username" 
+![image](https://user-images.githubusercontent.com/12640326/150736425-ae23c76e-799f-4b60-a74f-0a54fdca8d3e.png)
+
+
+# Lab01: Workload Migration
 
 Now that you have introduced to VMware Cloud on AWS basic concepts, let's see how we can easily migrate a workload into this Cloud environment.
+In this lab exercise you will learn about Hybrid Cloud Extension (HCX), this tool, bundled with VMware Cloud on AWS, will allow you to bulk migrate workloads to VMware Cloud on AWS and significantly reduce the time and complexity of moving workloads into the public Cloud environment.
 
-From the source datacenter reachable from the Cloud Console, click on 
+VMware HCX abstracts on-premises and Cloud resources and presents them to the apps as one continuous hybrid cloud. HCX provides high-performance, secure and optimized multisite interconnects. The abstraction and interconnects create infrastructure hybridity. 
+
+HCX has been installed to this environment to save time so you'll start directly with workload migration.
+
+From the source datacenter (Source DC) available from the Cloud Console, click on 
 
 
 # Lab03: Create firewall rule to access jumphost 
