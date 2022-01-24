@@ -12,23 +12,6 @@ We will use these VMs in oder to demonstrate several use cases:
 
 
 
-## Automate SDDC creation, HCX activation, Network FW rules creation, VM deployment
-
-Step 1 - SDDC Creation
---> OK
-
-Step 2 - HCX Activation
---> OK
---> check if site pairing + mesh are needed
-
-Step 3 - Network Rules
---> add HCX Rules
-
-Step 4 - VMs creation
---> from scratch
-
-
-
 ## Tanzu environment
 
 ### Setup and customizations
