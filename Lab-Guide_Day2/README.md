@@ -47,7 +47,7 @@ It's time to build application.
 
 # Lab202: Create registry project
 Sign up with your creds `roomX` / `roomX` to [VMware Harbor](https://registry.cloud-garage.net).
-Log into and create project with name of your user, don't forget to set it public.
+Log into and create project with name of your user, __don't forget to set it public__.
 
 # Lab203: Build the app
 Go to `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs` directory and inspect/modify `env` file specifying all settings.
