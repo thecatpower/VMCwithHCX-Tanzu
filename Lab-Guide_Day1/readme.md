@@ -32,12 +32,12 @@ Example of Cloud console window with an SDDC:
 
 
 All attendees will work in different groups (between 2 and 3 attendees per group), that VMware team will define and will communicate details about membership. Each group will work with a dedicated VM environment during labs, each folder will reflect group assignment following this order:
-- Room01: frontend-room1 VM
-- Room02: frontend-room2 VM
-- Room03: frontend-room3 VM
-- Room04: frontend-room4 VM
-- Room05: frontend-room5 VM
-- Room06: frontend-room6 VM
+- Room01: frontend-room01 VM
+- Room02: frontend-room02 VM
+- Room03: frontend-room03 VM
+- Room04: frontend-room04 VM
+- Room05: frontend-room05 VM
+- Room06: frontend-room06 VM
 ![image](https://user-images.githubusercontent.com/12640326/150803416-7b6ea8ab-369e-4d05-8c11-fea2cdc2ae12.png)
 
 
