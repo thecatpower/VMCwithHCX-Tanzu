@@ -40,6 +40,7 @@ All attendees will work in different groups (between 2 and 3 attendees per group
 - Group06: front-end06 VM
 ![image](https://user-images.githubusercontent.com/12640326/150803416-7b6ea8ab-369e-4d05-8c11-fea2cdc2ae12.png)
 
+
 Finally, in the target SDDC, you will use a jump host VM called "grease-monkey" to achieve some exercises.
 - Jumphost VM name: grease-monkey
 - IP Address: 
@@ -61,14 +62,17 @@ In order to achieve exercises, you need to first access to environment, so let's
 Please, if not already connected to, open the Cloud console https://vmc.vmware.com and authenticate with your MyVMware account.
 ![image](https://user-images.githubusercontent.com/12640326/150806426-88c7c74a-6d8e-40d4-be20-04f2441f6c32.png)
 
+
 Then click on "Source_SDDC" name to open its details, you see the SDDC main window that gives access to submenus with for example "networking & Security", "maintenance"...
 ![image](https://user-images.githubusercontent.com/12640326/150807071-73476b3e-2efb-4483-8fd1-6d5aad2131c1.png)
+
 
 Since we don't want to publish vCenter interface to the internet and setting up a VPN would take time and we want to keep this workshop short and focused on workload migration and modernization we will secure connection by restristing access per public IP.
 So, we will configure a firewall rule with NSX capabilites embedded into VMC by creating an inbound firewall rule giving access to vCenter from the different public IPs.
 
 So, click on "networking & security" tab and then on the left panel, click on "Gateway firewall" as per screen below:
 ![image](https://user-images.githubusercontent.com/12640326/150808402-175ab117-0464-45e9-8d47-830e6c927249.png)
+
 
 
 # Lab02: Know the application
