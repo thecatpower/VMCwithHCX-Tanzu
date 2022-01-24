@@ -32,20 +32,19 @@ Example of Cloud console window with an SDDC:
 
 
 All attendees will work in different groups (between 2 and 3 attendees per group), that VMware team will define and will communicate details about membership. Each group will work with a dedicated VM environment during labs, each folder will reflect group assignment following this order:
-- Group01: front-end01 VM
-- Group02: front-end02 VM
-- Group03: front-end03 VM
-- Group04: front-end04 VM
-- Group05: front-end05 VM
-- Group06: front-end06 VM
+- Room01: frontend-room01 VM
+- Room02: frontend-room02 VM
+- Room03: frontend-room03 VM
+- Room04: frontend-room04 VM
+- Room05: frontend-room05 VM
+- Room06: frontend-room06 VM
 ![image](https://user-images.githubusercontent.com/12640326/150803416-7b6ea8ab-369e-4d05-8c11-fea2cdc2ae12.png)
 
 
 Finally, in the target SDDC, you will use a jump host VM called "grease-monkey" to achieve some exercises.
 - Jumphost VM name: grease-monkey
-- IP Address: 
-- Login:
-- Password: 
+- Login: grease-monkey
+- Password: VMware1!
 
 
 # Prerequisites:
