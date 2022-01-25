@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: octant
-        image: harbor.vmc-tanzu.io/xpday/octant
+        image: registry.cloud-garage.net/xpday/octant
         imagePullPolicy: Always
         volumeMounts:
         - name: config

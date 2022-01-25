@@ -1,17 +1,18 @@
 ### Common
-export TKIA_DIR=~/tkia
+export TKIA_DIR=~/VMCwithHCX-Tanzu/Tanzu
 export DOMAIN=vmc-tanzu.io
 export SUBNET=172.17.8
 export BITS=/data/BITS
 . ${TKIA_DIR}/password
 
 ### TKGs
-export SUPERVISOR=k8s.Cluster-1.vcenter.sddc-18-135-174-15.vmwarevmc.com
+export SUPERVISOR=k8s.Cluster-1.vcenter.sddc-35-181-74-252.vmwarevmc.com 
 #export TANZU_USER=administrator@${DOMAIN}
 export TANZU_USER=cloudadmin@vmc.local
 
 ### HARBOR
-export HARBOR=harbor.${DOMAIN}
+#export HARBOR=harbor.${DOMAIN}
+export HARBOR=registry.cloud-garage.net
 
 ### TKGm
 export TKGM_RELEASE="v1.4.0"
@@ -20,7 +21,7 @@ export TKGM_CLI_BUNDLE="tanzu-cli-bundle-linux-amd64"
 export GOVC_USERNAME="cloudadmin@vmc.local"
 export GOVC_PASSWORD=${PASSWORD}
 #export GOVC_URL="vcenter.sddc-18-135-174-15.vmwarevmc.com"
-export GOVC_URL="10.2.224.4"
+export GOVC_URL="vcenter.sddc-35-181-74-252.vmwarevmc.com "
 export GOVC_INSECURE=1
 export GOVC_DATACENTER="SDDC-Datacenter"
 export GOVC_CLUSTER="Cluster-1"
