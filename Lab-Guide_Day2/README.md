@@ -3,7 +3,7 @@
 # Introduction
 This second part of this workshop is dedicated to the App Modernization topics and relies mainly on VMware Tanzu, our container management solution which is now also available on VMware Cloud on AWS as you will see during labs.
 
-You will use user `roomX` / `roomX` (X is an integer) on jumpbox call grease-monkey. One user per group, suggested app has been extracted and based on one running on previous front-end VM. So, the main purpose
+You will use user `roomXX` / `roomXX` (XX is an integer, such as 01 or 02) on jumpbox call grease-monkey. One user per group, suggested app has been extracted and based on one running on previous front-end VM. So, the main purpose
 is to run 2 distinct pods instead of a VM: nginx + phpfm. The intend to do that is to leverage k8s capabilities to easyly scale application depending on number of request.
 
 
@@ -47,7 +47,7 @@ It's time to build application.
 
 # Lab202: Create registry project
 Sign up with your creds `roomX` / `roomX` to [VMware Harbor](https://registry.cloud-garage.net).
-Log into and create project with name of your user, don't forget to set it public.
+Log into and create project with name of your user, __don't forget to set it public__.
 
 # Lab203: Build the app
 Go to `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs` directory and inspect/modify `env` file specifying all settings.
@@ -98,3 +98,5 @@ Let's discover how to attach a cluster to TO and look at dashboard.
 The goal is to replace VM database by RDS instance in aws.
 So, create your own RDS instance. Export/Import mariadb schema in RDS. Modify env file to point to RDS instance. Rebuild/repush/redeploy app or modify your existing running app.
 Is a big deal to use managed service in aws? what's about performance and lifecycle management? What's about the cost?
+
+All script regarding DB in localized in: `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs/dbtools`  

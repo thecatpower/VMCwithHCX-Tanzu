@@ -31,3 +31,4 @@ variable "admin_public_ips" {
 
 variable "cloud_hcx_ips" {default = ["1.1.1.1","2.2.2.2","3.3.3.3"]}
 variable "onprem_hcx_ips" {default = ["1.1.1.1","2.2.2.2","3.3.3.3"]}
+variable "onprem_JumpHost_ip" {default = "172.17.0.2"}

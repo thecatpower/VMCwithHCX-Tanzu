@@ -84,6 +84,6 @@ Step 6 - Play with kubeapps to deploy and manage lifecycle of apps
 
 ![kubeapps](img/kubeapps.png)
 
-Step 7- Play with TMC to discover how to manage guest cluster
+Step 7 - Play with TMC to discover how to manage guest cluster
 
 ![kubeapps](img/tmc.png)

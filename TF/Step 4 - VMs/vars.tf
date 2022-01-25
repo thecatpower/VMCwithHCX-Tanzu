@@ -22,6 +22,7 @@ variable "cloud_subnets" {
 }
 variable "onprem_subnets" {
   default = {
+    Name1              = "sddc-cgw-network-1"
     Subnet1            = "172.17.0.0/24"
     Subnet1gw          = "172.17.0.1/24"
 //    Subnet1dhcp        = "10.10.12.100-10.10.12.200"
@@ -36,5 +37,6 @@ variable "vc_cloud_user" {default = ""}
 variable "vc_cloud_pw" {default = ""}
 variable "vc_cloud_url" {default = ""}
 
-variable cloud_VM_BE {default = "BE-MariaDB"}
-variable onprem_VM_FE {default = "FE-NGINX"}
+variable onprem_VM_BE {default = "BACKEND"}
+variable onprem_VM_FE {default = "FRONTEND"}
+variable onprem_VM_JH {default = "GREASE-MONKEY"}
