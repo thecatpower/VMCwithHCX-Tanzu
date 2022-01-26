@@ -1,5 +1,7 @@
 # Lab Guide Day 2
 
+To discover even further Tanzu, visit [Tanzu Know It all](https://github.com/bdereims/tkia) git repo.
+
 # Introduction
 This second part of this workshop is dedicated to the App Modernization topics and relies mainly on VMware Tanzu, our container management solution which is now also available on VMware Cloud on AWS as you will see during labs.
 
