@@ -3,7 +3,7 @@ We will use these VMs in oder to demonstrate several use cases:
 
 | Name                                                         | Purpose                                                  |
 | ------------------------------------------------------------ | -------------------------------------------------------- |
-| [GREASE-MONKEY](https://bucket-garage.s3.eu-central-1.amazonaws.com/VMC/GREASE-MONKEY.ova) | Jumpbox with all necessary tools                         |
+| [GREASE-MONKEY](https://bucket-garage.s3.eu-central-1.amazonaws.com/template-grease-monkey.ova) | Jumpbox with all necessary tools                         |
 | [HARBOR](https://bucket-garage.s3.eu-central-1.amazonaws.com/VMC/HARBOR.ova) | Containers & Helm Charts Repository                      |
 | [FRONTEND-NGINX](https://bucket-garage.s3.eu-central-1.amazonaws.com/VMC/FRONTEND-NGINX.ova) | Frontend part of 2-tiers demo app, based on nginx+phpfpm |
 | [BACKEND-MARIADB](https://bucket-garage.s3.eu-central-1.amazonaws.com/VMC/BACKEND-MARIADB.ova) | Backend part of 2-tiers demo app, based on mariadb       |
