@@ -1,9 +1,12 @@
 # Lab Guide Day 2
 
+To discover even further Tanzu, visit [Tanzu Know It all](https://github.com/bdereims/tkia) git repo.<br>
+[Cloud-Garage Blog](https://blog.cloud-garage.net/) is also good content about hybrid-cloud and gitops.<br>
+
 # Introduction
 This second part of this workshop is dedicated to the App Modernization topics and relies mainly on VMware Tanzu, our container management solution which is now also available on VMware Cloud on AWS as you will see during labs.
 
-You will use user `roomX` / `roomX` (X is an integer) on jumpbox call grease-monkey. One user per group, suggested app has been extracted and based on one running on previous front-end VM. So, the main purpose
+You will use user `roomXX` / `roomXX` (XX is an integer, such as 01 or 02) on jumpbox call grease-monkey. One user per group, suggested app has been extracted and based on one running on previous front-end VM. So, the main purpose
 is to run 2 distinct pods instead of a VM: nginx + phpfm. The intend to do that is to leverage k8s capabilities to easyly scale application depending on number of request.
 
 
@@ -30,7 +33,7 @@ Cloud Native Storage in VCSA:
 
 # Lab201: Discovery and setup
 Get you familliar with jumpbox with proxy socks, use ssh or ptty: `ssh -D 9090 roomX@grease-monkey-vmc.cloud-garage.net`
-Clone the git repo in home: `git clone https://github.com/cdebosc/VMCwithHCX-Tanzu.git`
+Clone the git repo in home: `git clone https://github.com/thecatpower/VMCwithHCX-Tanzu.git`
 Take time to discover directory structure, specificaly `~/VMCwithHCX-Tanzu/Lab-Guide_Day2` and `~/VMCwithHCX-Tanzu/Tanzu` dirs.
 
 Setup your favorite browser to use local proxy socks: settings -> advanced -> system -> open your computer's proxy settings -> select socks with localhost:9090
@@ -47,7 +50,7 @@ It's time to build application.
 
 # Lab202: Create registry project
 Sign up with your creds `roomX` / `roomX` to [VMware Harbor](https://registry.cloud-garage.net).
-Log into and create project with name of your user, don't forget to set it public.
+Log into and create project with name of your user, __don't forget to set it public__.
 
 # Lab203: Build the app
 Go to `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs` directory and inspect/modify `env` file specifying all settings.
@@ -98,3 +101,5 @@ Let's discover how to attach a cluster to TO and look at dashboard.
 The goal is to replace VM database by RDS instance in aws.
 So, create your own RDS instance. Export/Import mariadb schema in RDS. Modify env file to point to RDS instance. Rebuild/repush/redeploy app or modify your existing running app.
 Is a big deal to use managed service in aws? what's about performance and lifecycle management? What's about the cost?
+
+All script regarding DB in localized in: `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs/dbtools`  

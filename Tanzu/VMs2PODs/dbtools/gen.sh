@@ -3,13 +3,13 @@
 
 . ./env
 
-DB=nginx.txt
+DB=web.txt
 
 cp /dev/null $DB 
 
 echo "generating..."
 
-for LINE in {1..1000}
+for LINE in {1..100}
 do
 	NAME=$( ./petname.sh )
 	DATE=$( date +%c )
@@ -19,4 +19,6 @@ done
 
 echo "loading..."
 
-mysqlimport -h ${HOST} -u root -pVMware1! --local nginx ${DB} 
+mysqlimport -u ${USERNAME} -p${PASSWORD} --local ${DATABASE} ${DB} 
+
+rm ${DB}

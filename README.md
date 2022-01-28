@@ -3,29 +3,12 @@ We will use these VMs in oder to demonstrate several use cases:
 
 | Name                                                         | Purpose                                                  |
 | ------------------------------------------------------------ | -------------------------------------------------------- |
-| [GREASE-MONKEY](https://bucket-garage.s3.eu-central-1.amazonaws.com/VMC/GREASE-MONKEY.ova) | Jumpbox with all necessary tools                         |
+| [GREASE-MONKEY](https://bucket-garage.s3.eu-central-1.amazonaws.com/template-grease-monkey.ova) | Jumpbox with all necessary tools                         |
 | [HARBOR](https://bucket-garage.s3.eu-central-1.amazonaws.com/VMC/HARBOR.ova) | Containers & Helm Charts Repository                      |
 | [FRONTEND-NGINX](https://bucket-garage.s3.eu-central-1.amazonaws.com/VMC/FRONTEND-NGINX.ova) | Frontend part of 2-tiers demo app, based on nginx+phpfpm |
 | [BACKEND-MARIADB](https://bucket-garage.s3.eu-central-1.amazonaws.com/VMC/BACKEND-MARIADB.ova) | Backend part of 2-tiers demo app, based on mariadb       |
 
 *All embeded components in VMs are opensource tools, free of charge without licence fees and free to use in respect of their opensource license.*
-
-
-
-## Automate SDDC creation, HCX activation, Network FW rules creation, VM deployment
-
-Step 1 - SDDC Creation
---> OK
-
-Step 2 - HCX Activation
---> OK
---> check if site pairing + mesh are needed
-
-Step 3 - Network Rules
---> add HCX Rules
-
-Step 4 - VMs creation
---> from scratch
 
 
 
@@ -101,6 +84,6 @@ Step 6 - Play with kubeapps to deploy and manage lifecycle of apps
 
 ![kubeapps](img/kubeapps.png)
 
-Step 7- Play with TMC to discover how to manage guest cluster
+Step 7 - Play with TMC to discover how to manage guest cluster
 
 ![kubeapps](img/tmc.png)
