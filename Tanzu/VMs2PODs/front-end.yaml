@@ -162,7 +162,7 @@ spec:
     apiVersion: apps/v1 
     kind: Deployment
     name: nginx-deployment
-  targetCPUUtilizationPercentage: 20 
+  targetCPUUtilizationPercentage: 1 
 
 ---
 apiVersion: autoscaling/v1
@@ -177,4 +177,4 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: php-fpm-deployment
-  targetCPUUtilizationPercentage: 20 
+  targetCPUUtilizationPercentage: 1 

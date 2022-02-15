@@ -1,5 +1,8 @@
 # Lab Guide Day 2
 
+To discover even further Tanzu, visit [Tanzu Know It all](https://github.com/bdereims/tkia) git repo.<br>
+[Cloud-Garage Blog](https://blog.cloud-garage.net/) is also good content about hybrid-cloud and gitops.<br>
+
 # Introduction
 This second part of this workshop is dedicated to the App Modernization topics and relies mainly on VMware Tanzu, our container management solution which is now also available on VMware Cloud on AWS as you will see during labs.
 
@@ -30,7 +33,7 @@ Cloud Native Storage in VCSA:
 
 # Lab201: Discovery and setup
 Get you familliar with jumpbox with proxy socks, use ssh or ptty: `ssh -D 9090 roomX@grease-monkey-vmc.cloud-garage.net`
-Clone the git repo in home: `git clone https://github.com/cdebosc/VMCwithHCX-Tanzu.git`
+Clone the git repo in home: `git clone https://github.com/thecatpower/VMCwithHCX-Tanzu.git`
 Take time to discover directory structure, specificaly `~/VMCwithHCX-Tanzu/Lab-Guide_Day2` and `~/VMCwithHCX-Tanzu/Tanzu` dirs.
 
 Setup your favorite browser to use local proxy socks: settings -> advanced -> system -> open your computer's proxy settings -> select socks with localhost:9090

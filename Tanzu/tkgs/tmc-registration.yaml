@@ -1,0 +1,8 @@
+apiVersion: installers.tmc.cloud.vmware.com/v1alpha1
+kind: AgentInstall
+metadata:
+  name: tmc-agent-installer-config
+  namespace: svc-tmc-c55 
+spec:
+  operation: INSTALL
+  registrationLink: https://tanzuvmcexperienceday.tmc.cloud.vmware.com/installer?id=5fbde06e9a7fd558c5e3d9702ca23adc6df7873058f192ad0af962b2b434f77c&source=registration&type=tkgs
