@@ -7,11 +7,11 @@ resource "hcx_vmc" "vmc_xpday" {
     sddc_id = var.sddc_id
 }
 
-/*
-################### TARGET ###################
+
+################### DESTINATION ###################
 provider "hcx" {
     alias  = "target"
-    vmc_token   = var.api_token_target
+    vmc_token   = var.api_token
 }
 resource "hcx_vmc" "vmc_xpday_target" {  
     provider = hcx.target
@@ -19,6 +19,7 @@ resource "hcx_vmc" "vmc_xpday_target" {
     sddc_id = var.sddc_id_target
 }
 
+/*
 ################### MESH ###################
 provider hcx {
    alias       = "src-pw"

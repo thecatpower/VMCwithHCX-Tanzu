@@ -13,10 +13,6 @@ variable "user"{
 variable "pw"{
   description = ""
 }
-variable "api_token_target" {
-  description = "API token used to authenticate when calling the VMware Cloud Services API."
-}
-
 variable "sddc_name_target"{
   description = "Name of target SDDC."
 }
