@@ -68,7 +68,7 @@ Then click on "Paris_SDDC" name to open its details, you see the SDDC main windo
 
 
 Since we don't want to publish vCenter interface to the internet and setting up a VPN would take time and we want to keep this workshop short and focused on workload migration and modernization we will secure connection by restristing access per public IP.
-So, we will configure a firewall rule with NSX capabilites embedded into VMC by creating an inbound firewall rule giving access to vCenter from the different public IPs.
+So, we will configure a firewall rule with NSX capabilities embedded into VMC by creating an inbound firewall rule giving access to vCenter from the different public IPs.
 
 So, click on "networking & security" tab and then on the left panel, click on "Gateway firewall" as per screen below:
 ![image](https://user-images.githubusercontent.com/12640326/150808402-175ab117-0464-45e9-8d47-830e6c927249.png)
