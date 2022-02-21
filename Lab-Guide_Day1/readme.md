@@ -47,7 +47,7 @@ You will use a jump host VM called "grease-monkey" to achieve some day2 exercise
 
 
 # Prerequisites:
-- A computer of course :) with a browser (Google Chrome preferred) 
+- A computer of course :) with a browser 
 - A Customer Connect previously known as "MyVMware" account is required to access VMware Cloud Console otherwise you'll be asked to create one, this is pretty simple and quick (email, first & last name). To do so, follow the link to Customer Connect portal : https://customerconnect.vmware.com/account-registration. 
 Once you provided your account email address you'll receive an email invitation to join an Organization called "Tanzu-VMC Exp Day", so please click on the link to join it and start labs.
 
