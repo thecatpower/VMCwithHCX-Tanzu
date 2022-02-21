@@ -15,6 +15,7 @@ Enjoy!
 # Lab Environment overview
 
 2 different environments at your disposal both hosted on VMware Cloud on AWS, where first will act as the source datacenter, while the second will be the target where you will migrate workloads to modernize later the application.
+
 ![lab-environment](../img/lab.png)
 
 VMware Cloud on AWS has been leveraged for both environments, including source to act as an on-premise environment, please keep this in mind.
@@ -69,7 +70,7 @@ We can define Firewall Rules in order to protect our workloads access.
 For example, we did not publish to vCenter on the internet, but restricted access just from the VDI environment.
 So, we configured a firewall rule with NSX capabilities embedded into VMC by creating the required objects.
 
-You can click on "networking & security" tab and then on the left panel, click on "Gateway firewall" as per screen below. You will find the vCenter rule in the Management section:
+You can click on "networking & security" tab and then on the left panel, click on "Gateway firewall" as per screen below. You will find the vCenter rule in the "Management Gateway" section:
 ![image](https://user-images.githubusercontent.com/12640326/150808402-175ab117-0464-45e9-8d47-830e6c927249.png)
 
 
