@@ -54,6 +54,19 @@ Finally, in the target SDDC, you will use a jump host VM called "grease-monkey" 
 - A Customer Connect previously known as "MyVMware" account is required to access VMware Cloud Console otherwise you'll be asked to create one, this is pretty simple and quick (email, first & last name). To do so, follow the link to Customer Connect portal : https://customerconnect.vmware.com/account-registration. 
 Once you provided your account email address you'll receive an email invitation to join an Organization called "Tanzu-VMC Exp Day", so please click on the link to join it and start labs.
 
+# Connect to LAB Environment
+In order to easily access the resources deployed in the VMC lab we will use VMware Horizon technology to access remote desktops with the necessary tools and configurations.
+You can point your browser to the following URL https://horizon.semealab.cloud where a welcome screen will appear as shown below:
+![lab-environment](../img/vdi1.png)
+
+Select "VMware Horizon HTML Access" at the bottom right of the welcome screen. This will load the web client version of VMware Horizon.
+When the loading process is complete we will be prompted to enter our login credentials (which will be provided by the speaker) and proceed to click on the "Login" button.
+![lab-environment](../img/vdi2.png)
+
+Once authenticated, the following screen will display an orange cloud icon with the name "Windows10" which we will click on to access the operating system desktop.
+
+![lab-environment](../img/vdi3.png)
+
 
 # Lab01: Access to Cloud Console and vCenter:
 
