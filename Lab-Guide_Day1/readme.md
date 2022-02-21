@@ -57,10 +57,12 @@ Once you provided your account email address you'll receive an email invitation 
 # Connect to LAB Environment
 In order to easily access the resources deployed in the VMC lab we will use VMware Horizon technology to access remote desktops with the necessary tools and configurations.
 You can point your browser to the following URL https://horizon.semealab.cloud where a welcome screen will appear as shown below:
+
 ![lab-environment](../img/vdi1.png)
 
 Select "VMware Horizon HTML Access" at the bottom right of the welcome screen. This will load the web client version of VMware Horizon.
 When the loading process is complete we will be prompted to enter our login credentials (which will be provided by the speaker) and proceed to click on the "Login" button.
+
 ![lab-environment](../img/vdi2.png)
 
 Once authenticated, the following screen will display an orange cloud icon with the name "Windows10" which we will click on to access the operating system desktop.
@@ -72,18 +74,21 @@ Once authenticated, the following screen will display an orange cloud icon with 
 
 In order to achieve exercises, you need to first access to environment, so let's start with the Cloud Console:
 Please, if not already connected to, open the Cloud console https://vmc.vmware.com and authenticate with your MyVMware account.
+
 ![lab-environment](../img/lab01a.png)
 
 
 Then click on "Source_SDDC" name to open its details, you see the SDDC main window that gives access to submenus with for example "networking & Security", "maintenance"...
+
 ![image](https://user-images.githubusercontent.com/12640326/150807071-73476b3e-2efb-4483-8fd1-6d5aad2131c1.png)
 
 
 We can define Firewall Rules in order to protect our workloads access.
-For example, we did not publish to vCenter on the internet, but restricted access just from the VDI environment.
+For example, we did not publish the vCenter to be accessed from any address in the internet, but restricted connections just from the administrators' addresses.
 So, we configured a firewall rule with NSX capabilities embedded into VMC by creating the required objects.
 
-You can click on "networking & security" tab and then on the left panel, click on "Gateway firewall" as per screen below. You will find the vCenter rule in the "Management Gateway" section:
+You can click on "networking & security" tab and then on the left panel, click on "Gateway firewall" as per screen below. You will find the vCenter incoming traffic rule in the "Management Gateway" section:
+
 ![image](https://user-images.githubusercontent.com/12640326/150808402-175ab117-0464-45e9-8d47-830e6c927249.png)
 
 
