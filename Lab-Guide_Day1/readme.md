@@ -43,10 +43,7 @@ All attendees will work in different groups (between 2 and 3 attendees per group
 ![image](https://user-images.githubusercontent.com/12640326/150803416-7b6ea8ab-369e-4d05-8c11-fea2cdc2ae12.png)
 
 
-Finally, in the target SDDC, you will use a jump host VM called "grease-monkey" to achieve some exercises.
-- Jumphost VM name: grease-monkey
-- Login: grease-monkey
-- Password: VMware1!
+You will use a jump host VM called "grease-monkey" to achieve some day2 exercises.
 
 
 # Prerequisites:
@@ -65,7 +62,7 @@ When the loading process is complete we will be prompted to enter our login cred
 
 ![lab-environment](../img/vdi2.png)
 
-Once authenticated, the following screen will display an orange cloud icon with the name "Windows10" which we will click on to access the operating system desktop.
+Once authenticated, you can access you desktop by clicking on the "Windows10" orange cloud icon.
 
 ![lab-environment](../img/vdi3.png)
 
