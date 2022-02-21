@@ -16,6 +16,7 @@ Enjoy!
 
 2 different environments at your disposal both hosted on VMware Cloud on AWS, where first will act as the source datacenter, while the second will be the target where you will migrate workloads to modernize later the application.
 ![image](https://user-images.githubusercontent.com/12640326/150928417-d4aa1e98-7745-4ea8-b9f1-5d6960cc2563.png)
+![acme-in-kube](img/lab.png)
 
 VMware Cloud on AWS has been leveraged for both environments, including source to act as an on-premise environment, please keep this in mind.
 
