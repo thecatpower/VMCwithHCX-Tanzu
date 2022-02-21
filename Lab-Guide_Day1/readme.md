@@ -15,8 +15,7 @@ Enjoy!
 # Lab Environment overview
 
 2 different environments at your disposal both hosted on VMware Cloud on AWS, where first will act as the source datacenter, while the second will be the target where you will migrate workloads to modernize later the application.
-![image](https://user-images.githubusercontent.com/12640326/150928417-d4aa1e98-7745-4ea8-b9f1-5d6960cc2563.png)
-![acme-in-kube](../img/lab.png)
+![lab-environment](../img/lab.png)
 
 VMware Cloud on AWS has been leveraged for both environments, including source to act as an on-premise environment, please keep this in mind.
 
@@ -25,8 +24,8 @@ VMware team will provide all details about these environments (names, URLs, IP a
 Access to these SDDC's is done with Cloud Console URL: https://vmc.vmware.com 
 You should have received an email invite to join these services after providing your email address to VMware team.
 
-- Source SDDC name: "SEMEA-Demo"
-- Target SDDC name: "Paris-SDDC"
+- Source SDDC name: "Source_SDDC"
+- Target SDDC name: "Destination_SDDC"
 
 Example of Cloud console window with an SDDC:
 ![image](https://user-images.githubusercontent.com/12640326/150803063-8e7578c3-d7eb-4ace-91c3-009ea5662429.png)
@@ -51,29 +50,27 @@ Finally, in the target SDDC, you will use a jump host VM called "grease-monkey" 
 
 # Prerequisites:
 - A computer of course :) with a browser (Google Chrome preferred) 
-- SSH Client (ie: Putty)
 - A Customer Connect previously known as "MyVMware" account is required to access VMware Cloud Console otherwise you'll be asked to create one, this is pretty simple and quick (email, first & last name). To do so, follow the link to Customer Connect portal : https://customerconnect.vmware.com/account-registration. 
 Once you provided your account email address you'll receive an email invitation to join an Organization called "Tanzu-VMC Exp Day", so please click on the link to join it and start labs.
-- Your public IP address: to get access to vCenter server as we don't want to publish it on the internet and want to avoid VPN for time constraints.
 
 
 # Lab01: Access to Cloud Console and vCenter:
 
 In order to achieve exercises, you need to first access to environment, so let's start with the Cloud Console:
 Please, if not already connected to, open the Cloud console https://vmc.vmware.com and authenticate with your MyVMware account.
-![image](https://user-images.githubusercontent.com/12640326/150928873-c213e5e4-e786-4575-a892-f4e403513124.png)
+![lab-environment](../img/lab01a.png)
 
 
-Then click on "Paris_SDDC" name to open its details, you see the SDDC main window that gives access to submenus with for example "networking & Security", "maintenance"...
+Then click on "Source_SDDC" name to open its details, you see the SDDC main window that gives access to submenus with for example "networking & Security", "maintenance"...
 ![image](https://user-images.githubusercontent.com/12640326/150807071-73476b3e-2efb-4483-8fd1-6d5aad2131c1.png)
 
 
-Since we don't want to publish vCenter interface to the internet and setting up a VPN would take time and we want to keep this workshop short and focused on workload migration and modernization we will secure connection by restristing access per public IP.
-So, we will configure a firewall rule with NSX capabilities embedded into VMC by creating an inbound firewall rule giving access to vCenter from the different public IPs.
+We can define Firewall Rules in order to protect our workloads access.
+For example, we did not publish to vCenter on the internet, but restricted access just from the VDI environment.
+So, we configured a firewall rule with NSX capabilities embedded into VMC by creating the required objects.
 
-So, click on "networking & security" tab and then on the left panel, click on "Gateway firewall" as per screen below:
+You can click on "networking & security" tab and then on the left panel, click on "Gateway firewall" as per screen below. You will find the vCenter rule in the Management section:
 ![image](https://user-images.githubusercontent.com/12640326/150808402-175ab117-0464-45e9-8d47-830e6c927249.png)
-
 
 
 # Lab02: Workload Migration
