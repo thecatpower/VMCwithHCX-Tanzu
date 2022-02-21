@@ -65,7 +65,7 @@ When the loading process is complete we will be prompted to enter our login cred
 
 ![lab-environment](../img/vdi2.png)
 
-Once authenticated, the following screen will display an orange cloud icon with the name "Windows10" which we will click on to access the operating system desktop.
+Once authenticated, you can access you desktop by clicking on the "Windows10" orange cloud icon.
 
 ![lab-environment](../img/vdi3.png)
 
