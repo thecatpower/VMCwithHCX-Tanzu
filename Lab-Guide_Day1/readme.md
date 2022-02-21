@@ -55,16 +55,16 @@ Once you provided your account email address you'll receive an email invitation 
 In order to easily access the resources deployed in the VMC lab we will use VMware Horizon technology to access remote desktops with the necessary tools and configurations.
 You can point your browser to the following URL https://horizon.semealab.cloud where a welcome screen will appear as shown below:
 
-![lab-environment](../img/vdi1.png)
+![vdi-landingpage](../img/vdi1.png)
 
 Select "VMware Horizon HTML Access" at the bottom right of the welcome screen. This will load the web client version of VMware Horizon.
 When the loading process is complete we will be prompted to enter our login credentials (which will be provided by the speaker) and proceed to click on the "Login" button.
 
-![lab-environment](../img/vdi2.png)
+![vdi-login](../img/vdi2.png)
 
 Once authenticated, you can access you desktop by clicking on the "Windows10" orange cloud icon.
 
-![lab-environment](../img/vdi3.png)
+![vdi-desktop](../img/vdi3.png)
 
 
 # Lab01: Access to Cloud Console and vCenter:
@@ -143,7 +143,7 @@ You can see progress and expand menus to get extended details: steps, timer, as 
 ![image](https://user-images.githubusercontent.com/12640326/150933284-9795c659-e733-4586-9fd6-b73509004762.png)
 
 
-You can also check into your target vCenter, available from the Cloud Console, in the "Paris SDDC" that your VM is now into the inventory.
+You can also check into your target vCenter, available from the Cloud Console, in the "Destination_SDDC" that your VM is now into the inventory.
 
 Congratulations, your VM has been migrated !!
 
