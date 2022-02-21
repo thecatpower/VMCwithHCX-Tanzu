@@ -43,10 +43,7 @@ All attendees will work in different groups (between 2 and 3 attendees per group
 ![image](https://user-images.githubusercontent.com/12640326/150803416-7b6ea8ab-369e-4d05-8c11-fea2cdc2ae12.png)
 
 
-Finally, in the target SDDC, you will use a jump host VM called "grease-monkey" to achieve some exercises.
-- Jumphost VM name: grease-monkey
-- Login: grease-monkey
-- Password: VMware1!
+You will use a jump host VM called "grease-monkey" to achieve some day2 exercises.
 
 
 # Prerequisites:
