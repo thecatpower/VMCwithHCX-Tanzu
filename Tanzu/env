@@ -6,7 +6,7 @@ export BITS=/data/BITS
 . ${TKIA_DIR}/password
 
 ### TKGs
-export SUPERVISOR=k8s.Cluster-1.vcenter.sddc-35-181-74-252.vmwarevmc.com 
+export SUPERVISOR=k8s.Cluster-1.vcenter.sddc-35-181-78-5.vmwarevmc.com 
 #export TANZU_USER=administrator@${DOMAIN}
 export TANZU_USER=cloudadmin@vmc.local
 
