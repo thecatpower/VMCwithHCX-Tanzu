@@ -6,12 +6,25 @@ To discover even further Tanzu, visit [Tanzu Know It all](https://github.com/bde
 # Introduction
 This second part of this workshop is dedicated to the App Modernization topics and relies mainly on VMware Tanzu, our container management solution which is now also available on VMware Cloud on AWS as you will see during labs.
 
-You will use user `roomXX` / `roomXX` (XX is an integer, such as 01 or 02) on jumpbox call grease-monkey. One user per group, suggested app has been extracted and based on one running on previous front-end VM. So, the main purpose
-is to run 2 distinct pods instead of a VM: nginx + phpfm. The intend to do that is to leverage k8s capabilities to easyly scale application depending on number of request.
+You will use user `roomXX` / `roomXX` (XX is an integer, such as 01 or 02) on jumpbox called grease-monkey. One user per group, suggested app has been extracted and based on one running on previous front-end VM. So, the main purpose is to run 2 distinct pods instead of a VM: nginx + phpfpm. The intend to do that is to leverage k8s capabilities to easily scale application depending on number of request.
 
 
 ![acme-in-kube](../img/acme-in-pods.png)
 
+# Connect to LAB Environment
+In order to easily access the resources deployed in the VMC lab we will use VMware Horizon technology to access remote desktops with the necessary tools and configurations.
+You can point your browser to the following URL https://horizon.semealab.cloud where a welcome screen will appear as shown below:
+
+![vdi-landingpage](../img/vdi1.png)
+
+Select "VMware Horizon HTML Access" at the bottom right of the welcome screen. This will load the web client version of VMware Horizon.
+When the loading process is complete we will be prompted to enter our login credentials (which will be provided by the speaker) and proceed to click on the "Login" button.
+
+![vdi-login](../img/vdi2.png)
+
+Once authenticated, you can access you desktop by clicking on the "Windows10" orange cloud icon.
+
+![vdi-desktop](../img/vdi3.png)
 
 # Lab200: VMC + Tanzu
 We have initiated TKG deployment in this VMC instance, roughly similar to on-premise installation.
