@@ -92,7 +92,7 @@ In place k8s release upgrade is possible. To do that, edit tkc item and change v
 
 !!! Don't modify relrease right now !!! 
 
-VMware also provide open source solution to manage kube's objects: Octant. Octant is able to run on your laptop, in container or as a deployment in kubernetes.
+VMware also provide open source solution to manage kube's objects: [Octant](https://github.com/vmware-tanzu/octant). Octant is able to run on your laptop, in container or as a deployment in kubernetes.
 Open a new tab in your browser and visit [Octant UI](http://octant.vmc-tanzu.io). Discover objects depending of deployed app in your namespace, try to interact within terminal console for nginx pods 
 
 Octant, a Kube Dashboard on steroid:<br>
@@ -102,7 +102,7 @@ Octant, a Kube Dashboard on steroid:<br>
 Tanzu offer prometheus/grafana to monitor k8s cluster and apps. There is also Tanzu Observability, SaaS solution offering monitoring/distributed tracing/correlated events.
 Let's give a shot to Grafana, open a new tab in browser with: [Grafana console](http://grafana.vmc-tanzu.io:3000).
 Use admin user with provided password in order to log on. Navigate to Dashboard -> Browse -> TKG Kubernetes cluster monitoring.
-Data have been scapped by prometeus and presented into dashboard by grafana. Tanzu Observability uses also PromQL language to create abstracted values like premetheus, you have the choice.
+Data have been scapped by prometeus and presented into dashboard by grafana. Tanzu Observability uses also PromQL language to create abstracted values like prometheus, you have the choice.
 
 Promotheus/Grafana monitoring kube cluster and apps:<br>
 ![Grafana](../img/grafana.png)
