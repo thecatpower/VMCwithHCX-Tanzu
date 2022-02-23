@@ -92,12 +92,16 @@ In place k8s release upgrade is possible. To do that, edit tkc item and change v
 
 !!! Don't modify relrease right now !!! 
 
+VMware also provide open source solution to manage kube's objects: Octant. Octant is able to run on your laptop, in container or as a deployment in kubernetes.
+Open a new tab in your browser and visit [Octant UI](http://octant.vmc-tanzu.io). Discover objects depending of deployed app in your namespace, try to interact within terminal console for nginx pods 
 
 # Lab207: Tanzu Monitoring
 Tanzu offer prometheus/grafana to monitor k8s cluster and apps. There is also Tanzu Observability, SaaS solution offering monitoring/distributed tracing/correlated events.
-Let's discover how to attach a cluster to TO and look at dashboard.
+Let's give a shot to Grafana, open a new tab in browser with: [Grafana console](http://grafana.vmc-tanzu.io:3000]
+Use admin user with provided password in order to log on. Navigate to Dashboard -> Browse -> TKG Kubernetes cluster monitoring.
+Data have been scapped by prometeus and presented into dashboard by grafana. Tanzu Observability uses also PromQL language to create abstracted values like premetheus, you have the choice.
 
-# Lab208: Switching back-end VM to AWS native services
+# Lab208(optional): Switching back-end VM to AWS native services
 The goal is to replace VM database by RDS instance in aws.
 So, create your own RDS instance. Export/Import mariadb schema in RDS. Modify env file to point to RDS instance. Rebuild/repush/redeploy app or modify your existing running app.
 Is a big deal to use managed service in aws? what's about performance and lifecycle management? What's about the cost?
