@@ -126,21 +126,40 @@ Select Automatically scan images on push
 
 
 # Lab205: Deploy application
-With the help of `./deploy.sh`, app is now running in namespace of your name.
-Inspect deployment with: `kubectl -n ${USER} get pods,svc`.
-What do you conclude? Does it match with your exspectations?
+In this lab we will deploy our application from the Docker images we previously uploaded. The application will be deployed to the acme TKGs cluster deployed in VMC. 
 
-Inspect furthermore with: `kubectl -n ${USER} get networkpolicies,hpa`.
+First of all we need to log into the TKG cluster. To do so, run the `~/VMCwithHCX-Tanzu/Tanzu/tkgs/login-guest-cluster.sh tkgs acme`
+
+![lab205-1](../img/lab205-1.png)
+
+You can verify that you have logged in correctly by running `kubectl get nodes`
+
+![lab205-2](../img/lab205-2.png)
+
+Now, deploy the application using the  `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs/deploy.sh`. This will deploy all the components for the application:
+
+![lab205-3](../img/lab205-3.png)
+
+You can inspect your deployment with: `kubectl -n roomXX get pods,svc`. (Replace roomXX with your room number)
+
+![lab205-4](../img/lab205-4.png)
+
+What do you conclude? Does it match with your expectations?
+Inspect furthermore with: `kubectl -n roomXX get networkpolicies,hpa`.
+
+![lab205-5](../img/lab205-5.png)
+
+You can find the IP for the application by running `kubectl -n roomXX get pods,svc`, under External-IP. (Your IP address might be different)
+
+![lab205-6](../img/lab205-6.png)
 
 Try to access app from your favorite browser. Does it work?
 
-Try to run busybox pod in your namespace and reach php page: `kubectl -n ${USER} run -it --rm busybox --image=busybox -- sh` and ``
-What is the result? Why?
 
-Load the app and discover how k8s scale deployments: `./scale_in_pods.sh`.
+*(Optional) Try to run busybox pod in your namespace and reach php page: `kubectl -n roomXX run -it --rm busybox --image=busybox -- sh` and 
+What is the result? Why? *
 
-Tips: there is a namespace that's running Octant.
-
+*(Optional) The application is using the Horizontal Pod Autoscaler. Create some load with the script and discover how K8s scales pods * `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs//scale_in_pods.sh`.
 
 # Lab206: Tanzu Management 
 Tanzu offer a flexible way to manage k8s cluster, scale out/in clusters is an exmaple. Because k8s clusters are operated by k8s, all is yaml.
