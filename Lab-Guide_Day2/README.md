@@ -45,11 +45,9 @@ Cloud Native Storage in VCSA:
 
 
 # Lab201: Discovery and setup
-Get you familliar with jumpbox with proxy socks, use ssh or ptty: `ssh -D 9090 roomX@grease-monkey-vmc.cloud-garage.net`
+Log into the Grease-Monkey jumpbox. Open a command-line prompt and run the following command: `ssh roomXX@grease-monkey-vmc.cloud-garage.net`. The password is the same for the VDI.
 Clone the git repo in home: `git clone https://github.com/thecatpower/VMCwithHCX-Tanzu.git`
-Take time to discover directory structure, specificaly `~/VMCwithHCX-Tanzu/Lab-Guide_Day2` and `~/VMCwithHCX-Tanzu/Tanzu` dirs.
-
-Setup your favorite browser to use local proxy socks: settings -> advanced -> system -> open your computer's proxy settings -> select socks with localhost:9090
+Take time to discover directory structure, specifically `~/VMCwithHCX-Tanzu/Lab-Guide_Day2` and `~/VMCwithHCX-Tanzu/Tanzu` dirs.
 
 test it in running local nginx container on grease-monkey and access it:
 `docker run -d -p $(expr $( ech: ${USER} | sed "s/room//") + 8080):80 --name=${USER} nginx`
@@ -63,7 +61,16 @@ It's time to build application.
 
 # Lab202: Create registry project
 Sign up with your creds `roomX` / `roomX` to [VMware Harbor](https://registry.cloud-garage.net).
+
+![harbor-1](../img/harbor-1.png)
+
+![harbor-2](../img/harbor-2.png)
+
 Log into and create project with name of your user, __don't forget to set it public__.
+
+![harbor-3](../img/harbor-3.png)
+
+![harbor-4](../img/harbor-4.png)
 
 # Lab203: Build the app
 Go to `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs` directory and inspect/modify `env` file specifying all settings.
