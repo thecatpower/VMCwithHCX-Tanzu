@@ -73,9 +73,22 @@ Log into and create project with name of your user, __don't forget to set it pub
 ![harbor-4](../img/harbor-4.png)
 
 # Lab203: Build the app
-Go to `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs` directory and inspect/modify `env` file specifying all settings.
-Now, were going to build app containers with the help of `./build.sh`.
-Inspect your fresh container images: `docker images`.
+Go to ~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs directory.
+Now, were going to build app containers. This command will build the two Docker images: acme-nginx and acme-php-fpm.
+Move into the `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs/containers` and inspect the content of the two folders: nginx and php-fpm.
+Inside the two folders you'll find a Dockerfile, which defines the entire Docker image:
+
+`cat ~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs/containers/nginx/Dockerfile`
+
+![lab203-1](../img/lab203-1.png)
+
+Now, run the `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs/build.sh` command. This command will run all the steps defined in the Dockerfile to build the acme-nginx and acme-php-fpm images:
+
+![lab203-2](../img/lab203-2.png)
+
+Inspect your freshly created container images: `docker images`.
+
+![lab203-3](../img/lab203-3.png)
 
 # Lab204: Push container images to registry
 Log yourself to registry: `docker login registry.cloud-garage.net`, your creds are quite obvious.
