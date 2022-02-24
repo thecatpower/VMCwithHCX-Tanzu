@@ -189,7 +189,7 @@ Open a new tab in your browser and visit [Octant UI](http://octant.vmc-tanzu.io)
 Octant, a Kube Dashboard on steroid:<br>
 ![Octant](../img/octant.png)
 
-# Lab209: Tanzu Monitoring
+# Lab208: Tanzu Monitoring
 Tanzu offers different options to monitor your Kubernetes clusters and apps. For example, Tanzu Observability (SaaS solution offering monitoring/distributed tracing/correlated events). Tanzu also includes support for Prometheus/Grafana to monitor k8s cluster and apps. 
 
 Let's give a shot to Grafana, open a new tab in browser with: [Grafana console](http://grafana.vmc-tanzu.io:3000).
@@ -199,7 +199,7 @@ Data have been scapped by prometeus and presented into dashboard by grafana. Tan
 Promotheus/Grafana monitoring kube cluster and apps:<br>
 ![Grafana](../img/grafana.png)
 
-# Lab208(optional): Switching back-end VM to AWS native services
+# Lab209(optional): Switching back-end VM to AWS native services
 The goal is to replace VM database by RDS instance in aws.
 So, create your own RDS instance. Export/Import mariadb schema in RDS. Modify env file to point to RDS instance. Rebuild/repush/redeploy app or modify your existing running app.
 Is a big deal to use managed service in aws? what's about performance and lifecycle management? What's about the cost?
