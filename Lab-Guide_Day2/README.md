@@ -45,7 +45,7 @@ Cloud Native Storage in VCSA:
 
 
 # Lab201: Discovery and setup
-Log into the Grease-Monkey jumpbox. Open a command-line prompt and run the following command: `ssh roomXX@grease-monkey-vmc.cloud-garage.net`. 
+Log into the Grease-Monkey jumpbox. Open a command-line prompt and run the following command: `ssh roomXX@grease-monkey.vmc-tanzu.io`. 
 
 The password is the same for the VDI.
 
