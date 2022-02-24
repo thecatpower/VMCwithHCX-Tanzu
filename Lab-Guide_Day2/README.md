@@ -161,7 +161,7 @@ Try to access app from your favorite browser. Does it work?
 *(Optional) Try to run busybox pod in your namespace and reach php page: `kubectl -n roomXX run -it --rm busybox --image=busybox -- sh` and 
 What is the result? Why? *
 
-*(Optional) The application is using the Horizontal Pod Autoscaler. Create some load with the script and discover how K8s scales pods * `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs//scale_in_pods.sh`.
+*(Optional) The application is using the Horizontal Pod Autoscaler. Create some load with the script and discover how K8s scales pods * `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs/scale_in_pods.sh`.
 
 
 # Lab206: Tanzu Management 
@@ -191,7 +191,7 @@ Open a new tab in your browser and visit [Octant UI](http://octant.vmc-tanzu.io)
 Octant, a Kube Dashboard on steroid:<br>
 ![Octant](../img/octant.png)
 
-# Lab208: Tanzu Monitoring
+# Lab209: Tanzu Monitoring
 Tanzu offers different options to monitor your Kubernetes clusters and apps. For example, Tanzu Observability (SaaS solution offering monitoring/distributed tracing/correlated events). Tanzu also includes support for Prometheus/Grafana to monitor k8s cluster and apps. 
 
 Let's give a shot to Grafana, open a new tab in browser with: [Grafana console](http://grafana.vmc-tanzu.io:3000).
