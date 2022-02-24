@@ -91,10 +91,39 @@ Inspect your freshly created container images: `docker images`.
 ![lab203-3](../img/lab203-3.png)
 
 # Lab204: Push container images to registry
-Log yourself to registry: `docker login registry.cloud-garage.net`, your creds are quite obvious.
-Push to reg with: `./push.sh`. You are invited to discover `containers/Makefile`.
-Inspect the result into Harbor. Launch a vulnerability scan against freshly pushed images, what is the result?
-Modify your project to automaticaly scan any new pushed images and avoid to deploy ones low and higher vulnerability severities.
+Log yourself to registry: `docker login registry.cloud-garage.net`. The username is roomXX and the password is the same as the VDI.
+
+![lab204-1](../img/lab204-1.png)
+
+You can upload the images to the registry by running the script: `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs/push.sh`. You are invited to discover `containers/Makefile`.
+
+![lab204-2](../img/lab204-2.png)
+
+Inspect the result into Harbor:
+
+![lab204-3](../img/lab204-3.png)
+
+Launch a vulnerability scan against the freshly pushed images by clicking the name of each of them, selecting it and clicking on Scan:
+
+![lab204-4](../img/lab204-4.png)
+
+![lab204-5](../img/lab204-5.png)
+
+![lab204-6](../img/lab204-6.png)
+
+
+Modify your project to automaticaly scan any new pushed images and avoid deploying ones low and higher vulnerability severities.
+
+Go to the project view and click on Configuration
+
+![lab204-7](../img/lab204-7.png)
+
+Select "Prevent vulnerable images from running". 
+Select "High" as a vulnerability threshold
+Select Automatically scan images on push
+
+![lab204-8](../img/lab204-8.png)
+
 
 # Lab205: Deploy application
 With the help of `./deploy.sh`, app is now running in namespace of your name.
