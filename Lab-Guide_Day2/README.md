@@ -45,13 +45,11 @@ Cloud Native Storage in VCSA:
 
 
 # Lab201: Discovery and setup
-Log into the Grease-Monkey jumpbox. Open a command-line prompt and run the following command: `ssh roomXX@grease-monkey-vmc.cloud-garage.net`. The password is the same for the VDI.
-Clone the git repo in home: `git clone https://github.com/thecatpower/VMCwithHCX-Tanzu.git`
-Take time to discover directory structure, specifically `~/VMCwithHCX-Tanzu/Lab-Guide_Day2` and `~/VMCwithHCX-Tanzu/Tanzu` dirs.
+Log into the Grease-Monkey jumpbox. Open a command-line prompt and run the following command: `ssh roomXX@grease-monkey-vmc.cloud-garage.net`. 
 
-test it in running local nginx container on grease-monkey and access it:
-`docker run -d -p $(expr $( ech: ${USER} | sed "s/room//") + 8080):80 --name=${USER} nginx`
-You should able to visit http://grease-monkey:[your_port_number]
+The password is the same for the VDI.
+
+Take time to discover directory structure, specifically `~/VMCwithHCX-Tanzu/Lab-Guide_Day2` and `~/VMCwithHCX-Tanzu/Tanzu` dirs.
 
 As a DevSecOps team member you have access to source code of the app. Go to `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs` directory.
 If you are brave enough, you can modify some artefacts like: `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs/containers/html/index.html`  
