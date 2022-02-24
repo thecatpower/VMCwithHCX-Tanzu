@@ -145,9 +145,11 @@ You can inspect your deployment with: `kubectl -n roomXX get pods,svc`. (Replace
 ![lab205-4](../img/lab205-4.png)
 
 What do you conclude? Does it match with your expectations?
+
 Inspect furthermore with: `kubectl -n roomXX get networkpolicies,hpa`.
 
 ![lab205-5](../img/lab205-5.png)
+
 
 You can find the IP for the application by running `kubectl -n roomXX get pods,svc`, under External-IP. (Your IP address might be different)
 
@@ -161,26 +163,37 @@ What is the result? Why? *
 
 *(Optional) The application is using the Horizontal Pod Autoscaler. Create some load with the script and discover how K8s scales pods * `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs//scale_in_pods.sh`.
 
+
 # Lab206: Tanzu Management 
-Tanzu offer a flexible way to manage k8s cluster, scale out/in clusters is an exmaple. Because k8s clusters are operated by k8s, all is yaml.
+
+Tanzu offer a flexible way to manage K8s clusters, focusing on day 1 and also day 2 operations (cluster upgrading, patching, scale in/out). Because TKG uses Cluster API, the clusters are created with another Kubernetes cluster (the supervisor cluster) and therefore all is yaml.
+
 Go to `~/VMCwithHCX-Tanzu/Tanzu/tkgs/guest-cluster` dir and discover how we deploy cluster with `create-managed-cluster.yaml`.
-What do you notice in this yaml?
+You can see different parameters, such as control plane and workers size, Kubernetes version, CNI and pod/services IP block
 
-t's needed to be login into suprervisor cluster and workload cluster, there are scripts for that in `~/VMCwithHCX-Tanzu/Tanzu`: `./login.sh` and `login-guest-cluster.sh`.
+![lab206-1](../img/lab206-1.png)
 
-It's possible to directly manage cluster with `tanzukubernetesclusters.run.tanzu.vmware.com` object: `kubectl get tkc -A`.
+Now lets try to see how to perform day-2 operations. To do so, you need to switch to the supervisor namespace: `kubectl config use-context tkgs`
+
+![lab206-2](../img/lab206-2.png)
+
+You can see the TKG cluster by typing `kubectl get tkc -A`.
+
+![lab206-3](../img/lab206-3.png)
 In place k8s release upgrade is possible. To do that, edit tkc item and change version accordingly to what Tanzu offer, for example: `kubectl -n tkgs edit tkc acme` and replace version.
 
-!!! Don't modify relrease right now !!! 
+!!! Don't modify any parameter from the cluster right now!!! 
 
-VMware also provide open source solution to manage kube's objects: [Octant](https://github.com/vmware-tanzu/octant). Octant is able to run on your laptop, in container or as a deployment in kubernetes.
+# Lab207: Octant
+VMware also provides an open source solution to manage Kubernetes objects through a graphical interface: [Octant](https://github.com/vmware-tanzu/octant). Octant is able to run on your laptop, in container or as a deployment in kubernetes.
 Open a new tab in your browser and visit [Octant UI](http://octant.vmc-tanzu.io). Discover objects depending of deployed app in your namespace, try to interact within terminal console for nginx pods 
 
 Octant, a Kube Dashboard on steroid:<br>
 ![Octant](../img/octant.png)
 
-# Lab207: Tanzu Monitoring
-Tanzu offer prometheus/grafana to monitor k8s cluster and apps. There is also Tanzu Observability, SaaS solution offering monitoring/distributed tracing/correlated events.
+# Lab208: Tanzu Monitoring
+Tanzu offers different options to monitor your Kubernetes clusters and apps. For example, Tanzu Observability (SaaS solution offering monitoring/distributed tracing/correlated events). Tanzu also includes support for Prometheus/Grafana to monitor k8s cluster and apps. 
+
 Let's give a shot to Grafana, open a new tab in browser with: [Grafana console](http://grafana.vmc-tanzu.io:3000).
 Use admin user with provided password in order to log on. Navigate to Dashboard -> Browse -> TKG Kubernetes cluster monitoring.
 Data have been scapped by prometeus and presented into dashboard by grafana. Tanzu Observability uses also PromQL language to create abstracted values like prometheus, you have the choice.
