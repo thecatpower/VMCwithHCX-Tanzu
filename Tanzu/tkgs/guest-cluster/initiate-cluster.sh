@@ -2,7 +2,7 @@
 #bdereims@vmware.com
 
 MONITORING_NS="monitoring" 
-STORAGE_CLASS="vsan-default-storage-policy"
+STORAGE_CLASS="vmc-workload-storage-policy-cluster-1"
 
 kubectl apply -f allow-runasnonroot-clusterrole.yaml
 kubectl apply -f metrics.yaml
