@@ -104,7 +104,13 @@ Each group of attendees has its own front-end VM (front-end01 to 06 VM) located 
 ![image](https://user-images.githubusercontent.com/12640326/150804235-4cb1dd2c-61e2-4171-9cdb-a650ef8cc109.png)
 
 
-Now let's start by accessing HCX on the source datacenter. Access to HCX Client: https://hcx.sddc-13-36-28-79.vmwarevmc.com/hybridity/ui/hcx-client/index.html#/dashboard with provided credentials.
+Now let's start by accessing HCX on the source datacenter.
+Access HCX plug-in from your vSphere Client
+
+![acme-in-kube](../img/hcx-plugin.png)
+
+or directly via HCX Client: https://hcx.sddc-15-188-191-254.vmwarevmc.com/ with provided credentials.
+
 You should see this dashboard:
 ![image](https://user-images.githubusercontent.com/12640326/150930491-d1d821f3-bc6a-49f3-b23d-f50d1aebe337.png)
 
