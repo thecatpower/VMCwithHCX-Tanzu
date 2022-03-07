@@ -6,7 +6,7 @@ To discover even further Tanzu, visit [Tanzu Know It all](https://github.com/bde
 # Introduction
 This second part of this workshop is dedicated to the App Modernization topics and relies mainly on VMware Tanzu, our container management solution which is now also available on VMware Cloud on AWS as you will see during labs.
 
-You will use user `roomXX` / `roomXX` (XX is an integer, such as 01 or 02) on jumpbox called grease-monkey. One user per group, suggested app has been extracted and based on one running on previous front-end VM. So, the main purpose is to run 2 distinct pods instead of a VM: nginx + phpfpm. The intend to do that is to leverage k8s capabilities to easily scale application depending on number of request.
+You will use user `roomXX` (XX is an integer, such as 01 or 02) on jumpbox called grease-monkey. One user per group, suggested app has been extracted and based on one running on previous front-end VM. So, the main purpose is to run 2 distinct pods instead of a VM: nginx + phpfpm. The intend to do that is to leverage k8s capabilities to easily scale application depending on number of request.
 
 
 ![acme-in-kube](../img/acme-in-pods.png)
@@ -170,7 +170,7 @@ From the [VMware Cloud Console](https://console.cloud.vmware.com/), you can pick
 
 ![lab206b](../img/lab206b.png)
 
-Your cluster has only 1 Control Plane node nad 1 Worker node.
+Your cluster has only 1 Control Plane node and 1 Worker node.
 From the Node pools section, you can easily scale your cluster adding an additional worker node
 
 ![lab206c](../img/lab206c.png)
@@ -180,22 +180,6 @@ Another typical day2 operation is to upgrade the kubernetes releas of your clust
 ![lab206d](../img/lab206d.png)
 
 
-Go to `~/VMCwithHCX-Tanzu/Tanzu/tkgs/guest-cluster` dir and discover how we deploy cluster with `create-managed-cluster.yaml`.
-You can see different parameters, such as control plane and workers size, Kubernetes version, CNI and pod/services IP block
-
-![lab206-1](../img/lab206-1.png)
-
-Now lets try to see how to perform day-2 operations. To do so, you need to switch to the supervisor namespace: `kubectl config use-context tkgs`
-
-![lab206-2](../img/lab206-2.png)
-
-You can see the TKG cluster by typing `kubectl get tkc -A`.
-
-![lab206-3](../img/lab206-3.png)
-In place k8s release upgrade is possible. To do that, edit tkc item and change version accordingly to what Tanzu offer, for example: `kubectl -n tkgs edit tkc acme` and replace version.
-
-!!! Don't modify any parameter from the cluster right now!!! 
-
 # Lab207: Octant
 VMware also provides an open source solution to manage Kubernetes objects through a graphical interface: [Octant](https://github.com/vmware-tanzu/octant). Octant is able to run on your laptop, in container or as a deployment in kubernetes.
 Open a new tab in your browser and visit [Octant UI](http://octant.vmc-tanzu.io). Discover objects depending of deployed app in your namespace, try to interact within terminal console for nginx pods 
@@ -203,17 +187,8 @@ Open a new tab in your browser and visit [Octant UI](http://octant.vmc-tanzu.io)
 Octant, a Kube Dashboard on steroid:<br>
 ![Octant](../img/octant.png)
 
-# Lab208: Tanzu Monitoring
-Tanzu offers different options to monitor your Kubernetes clusters and apps. For example, Tanzu Observability (SaaS solution offering monitoring/distributed tracing/correlated events). Tanzu also includes support for Prometheus/Grafana to monitor k8s cluster and apps. 
 
-Let's give a shot to Grafana, open a new tab in browser with: [Grafana console](http://grafana.vmc-tanzu.io:3000).
-Use admin user with provided password in order to log on. Navigate to Dashboard -> Browse -> TKG Kubernetes cluster monitoring.
-Data have been scapped by prometeus and presented into dashboard by grafana. Tanzu Observability uses also PromQL language to create abstracted values like prometheus, you have the choice.
-
-Promotheus/Grafana monitoring kube cluster and apps:<br>
-![Grafana](../img/grafana.png)
-
-# Lab209(optional): Switching back-end VM to AWS native services
+# Lab208(optional): Switching back-end VM to AWS native services
 The goal is to replace VM database by RDS instance in aws.
 So, create your own RDS instance. Export/Import mariadb schema in RDS. Modify env file to point to RDS instance. Rebuild/repush/redeploy app or modify your existing running app.
 Is a big deal to use managed service in aws? what's about performance and lifecycle management? What's about the cost?
