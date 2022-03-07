@@ -58,7 +58,7 @@ If you get lost or confused, reclone repo in order to start from scratch
 It's time to build application.
 
 # Lab202: Create registry project
-Sign up with your creds `roomX` / `roomX` to [VMware Harbor](https://registry.cloud-garage.net).
+Sign up with your creds `roomXX` / passsword to [VMware Harbor](https://registry.cloud-garage.net).
 
 ![harbor-1](../img/harbor-1.png)
 
