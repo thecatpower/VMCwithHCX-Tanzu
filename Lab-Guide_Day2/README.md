@@ -49,6 +49,8 @@ Log into the Grease-Monkey jumpbox. Open a command-line prompt and run the follo
 
 The password is the same for the VDI.
 
+![SSH](../img/ssh0.png)
+
 If you prefer, you can use the MobaXterm client installed in your VDI.
 
 ![MobaXterm](../img/ssh1.png)
