@@ -160,6 +160,25 @@ What is the result? Why? *
 # Lab206: Tanzu Management 
 
 Tanzu offer a flexible way to manage K8s clusters, focusing on day 1 and also day 2 operations (cluster upgrading, patching, scale in/out). Because TKG uses Cluster API, the clusters are created with another Kubernetes cluster (the supervisor cluster) and therefore all is yaml.
+In this case, we will leverage Tanzu Mission Control to manage our k8s clusters lifecycle via WebUI.
+
+Go to the vCenter and explore your roomXX Tanzu Kubernetes Cluster inside the lab2-06 vSphere Namespace.
+
+![lab206a](../img/lab206a.png)
+
+From the [VMware Cloud Console](https://console.cloud.vmware.com/), you can pick TMC service and see your roomXX Tanzu Kubernetes Cluster status.
+
+![lab206b](../img/lab206b.png)
+
+Your cluster has only 1 Control Plane node nad 1 Worker node.
+From the Node pools section, you can easily scale your cluster adding an additional worker node
+
+![lab206c](../img/lab206c.png)
+
+Another typical day2 operation is to upgrade the kubernetes releas of your cluster. You can select you target release from the Upgrade section
+
+![lab206d](../img/lab206d.png)
+
 
 Go to `~/VMCwithHCX-Tanzu/Tanzu/tkgs/guest-cluster` dir and discover how we deploy cluster with `create-managed-cluster.yaml`.
 You can see different parameters, such as control plane and workers size, Kubernetes version, CNI and pod/services IP block
