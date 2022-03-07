@@ -1,6 +1,7 @@
 *.hcl
 *.backup
 *.tfstate
+*.tfstate.locl.info
 secrets.tfvars
 .terraform
 *.plan
