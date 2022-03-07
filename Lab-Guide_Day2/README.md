@@ -50,9 +50,13 @@ Log into the Grease-Monkey jumpbox. Open a command-line prompt and run the follo
 The password is the same for the VDI.
 
 If you prefer, you can use the MobaXterm client installed in your VDI.
+
 ![MobaXterm](../img/ssh1.png)
+
 ![MobaXterm](../img/ssh2.png)
+
 You can point to either grease-monkey.vmc-tanzu.io or 10.3.0.2 IP, checking the "Specify username" flag and using your roomXX username.
+
 ![MobaXterm](../img/ssh3.png)
 
 
