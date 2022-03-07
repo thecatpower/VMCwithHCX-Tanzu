@@ -49,6 +49,13 @@ Log into the Grease-Monkey jumpbox. Open a command-line prompt and run the follo
 
 The password is the same for the VDI.
 
+If you prefer, you can use the MobaXterm client installed in your VDI.
+![MobaXterm](../img/ssh1.png)
+![MobaXterm](../img/ssh2.png)
+You can point to either grease-monkey.vmc-tanzu.io or 10.3.0.2 IP, checking the "Specify username" flag and using your roomXX username.
+![MobaXterm](../img/ssh3.png)
+
+
 Take time to discover directory structure, specifically `~/VMCwithHCX-Tanzu/Lab-Guide_Day2` and `~/VMCwithHCX-Tanzu/Tanzu` dirs.
 
 As a DevSecOps team member you have access to source code of the app. Go to `~/VMCwithHCX-Tanzu/Tanzu/VMs2PODs` directory.
