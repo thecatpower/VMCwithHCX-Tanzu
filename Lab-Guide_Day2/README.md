@@ -170,7 +170,7 @@ From the [VMware Cloud Console](https://console.cloud.vmware.com/), you can pick
 
 ![lab206b](../img/lab206b.png)
 
-Your cluster has only 1 Control Plane node nad 1 Worker node.
+Your cluster has only 1 Control Plane node and 1 Worker node.
 From the Node pools section, you can easily scale your cluster adding an additional worker node
 
 ![lab206c](../img/lab206c.png)
