@@ -101,8 +101,8 @@ HCX has been installed to this environment to save time so you'll start directly
 The application used during this workshop is a 2-tier app composed of a front-end VM (NGINX with PHP) and a back-end VM (MariaDB).  
 
 Each group of attendees has its own front-end VM (front-end01 to 06 VM) located into separated vCenter folder. The back-end VM is the same for all groups and will be shared among them.
-![image](https://user-images.githubusercontent.com/12640326/150804235-4cb1dd2c-61e2-4171-9cdb-a650ef8cc109.png)
 
+![image](https://user-images.githubusercontent.com/12640326/150804235-4cb1dd2c-61e2-4171-9cdb-a650ef8cc109.png)
 
 Now let's start by accessing HCX on the source datacenter.
 Access HCX plug-in from your vSphere Client
@@ -114,16 +114,15 @@ or directly via HCX Client: https://hcx.sddc-15-188-191-254.vmwarevmc.com/ with 
 You should see this dashboard:
 ![image](https://user-images.githubusercontent.com/12640326/150930491-d1d821f3-bc6a-49f3-b23d-f50d1aebe337.png)
 
-
 You can see HCX details, location of datacenters, statistics about migrated VMs, etc...
 
 Now, let's got to the "migrate" menu on the left to select VM to migrate:
+
 ![image](https://user-images.githubusercontent.com/12640326/150931010-4e1ef533-9040-4d3c-a903-d0d04419d61f.png)
 
-
 Once in the "migrate" menu, please open the "migrate window' by clicking on the button in the middle, a new pop-up window appears:
-![image](https://user-images.githubusercontent.com/12640326/150932204-1a0d5421-cd1f-4df7-aa51-038d76856deb.png)
 
+![image](https://user-images.githubusercontent.com/12640326/150932204-1a0d5421-cd1f-4df7-aa51-038d76856deb.png)
 
 Once inventory is loaded, you can see on the left the vCenter folder structure and when you click on workloads folder you will see all VMs from each group. Please select your assigned folder (Group01 = Room01, etc..) and please select the appropriate front-end VM.
 ![image](https://user-images.githubusercontent.com/12640326/150932453-1531455d-06a7-4a36-b52a-0e9e8dda110c.png)
