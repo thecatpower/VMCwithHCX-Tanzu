@@ -307,6 +307,33 @@ resource "nsxt_policy_predefined_gateway_policy" "NSX_MGW_RULESET" {
   }
 }
 
+################SRC COMPUTE GATEWAY################
+/*
+resource "nsxt_policy_fixed_segment" "NET-CGW1-OP" {
+  display_name        = "sddc-cgw-network-1"
+  description         = "sddc-cgw-network-1"
+  connectivity_path   = "/infra/tier-1s/cgw"
+  subnet {
+    cidr        = "192.168.1.1/24"
+    dhcp_ranges = ["192.168.1.128-192.168.1.254"]
+    dhcp_v4_config {
+      server_address = "100.96.1.1/30"
+      lease_time     = 86400
+    }
+  }
+}
+*/
+
+resource "nsxt_policy_predefined_gateway_policy" "NSX_CGW_RULESET-OP" {
+  path = "/infra/domains/cgw/gateway-policies/default"
+  rule {
+    display_name = "Default VTI Rule"
+    nsx_id       = "default-vti-rule"
+    action       = "ALLOW"
+    scope        = ["/infra/labels/cgw-vpn"]
+  }
+}
+
 ################DST COMPUTE GATEWAY################
 resource "nsxt_policy_group" "CGW_grp-JumpHost" {
   provider = nsxt.dst
@@ -370,7 +397,7 @@ resource "nsxt_policy_predefined_gateway_policy" "NSX_CGW_RULESET" {
   rule {
     display_name = "Default VTI Rule"
     nsx_id       = "default-vti-rule"
-    action       = "DROP"
+    action       = "ALLOW"
     scope        = ["/infra/labels/cgw-vpn"]
   }
   rule {
@@ -561,22 +588,6 @@ resource "nsxt_policy_nat_rule" "NAT_MGMT" {
   tag {
     scope = "color"
     tag   = "blue"
-  }
-}
-*/
-/*
-resource "nsxt_policy_fixed_segment" "NET-CGW1" {
-  provider = nsxt.onprem
-  display_name        = "sddc-cgw-network-1"
-  description         = "sddc-cgw-network-1"
-  connectivity_path   = "/infra/tier-1s/cgw"
-  subnet {
-    cidr        = "172.17.0.1/24"
-    //dhcp_ranges = ["10.6.59.128-10.6.59.254"]
-    dhcp_v4_config {
-      server_address = "100.96.1.1/30"
-      lease_time     = 86400
-    }
   }
 }
 */
