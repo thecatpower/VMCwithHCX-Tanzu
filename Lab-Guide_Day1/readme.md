@@ -102,7 +102,7 @@ The application used during this workshop is a 2-tier app composed of a front-en
 
 Each group of attendees has its own front-end VM (front-end01 to 06 VM) located into separated vCenter folder. The back-end VM is the same for all groups and will be shared among them.
 
-![image](https://user-images.githubusercontent.com/12640326/150804235-4cb1dd2c-61e2-4171-9cdb-a650ef8cc109.png)
+![image](https://user-images.githubusercontent.com/70263743/157101655-8ba42efb-f682-43fa-a0bc-2978550b2115.png)
 
 Now let's start by accessing HCX on the source datacenter.
 Access HCX plug-in from your vSphere Client
