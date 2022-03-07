@@ -144,12 +144,7 @@ You can inspect your deployment with: `kubectl -n roomXX get pods,svc`. (Replace
 
 What do you conclude? Does it match with your expectations?
 
-Inspect furthermore with: `kubectl -n roomXX get networkpolicies,hpa`.
-
-![lab205-5](../img/lab205-5.png)
-
-
-You can find the IP for the application by running `kubectl -n roomXX get pods,svc`, under External-IP. (Your IP address might be different)
+You can find the IP for the application under External-IP. (Your IP address might be different)
 
 ![lab205-6](../img/lab205-6.png)
 
