@@ -184,11 +184,11 @@ From the [VMware Cloud Console](https://console.cloud.vmware.com/), you can pick
 ![lab206b](../img/lab206b.png)
 
 Your cluster has only 1 Control Plane node and 1 Worker node.
-From the Node pools section, you can easily scale your cluster adding an additional worker node
+From the Node pools section, you can easily scale your cluster adding another worker node and appreciate the change both via TMC and vSphere Web UI.
 
 ![lab206c](../img/lab206c.png)
 
-Another typical day2 operation is to upgrade the kubernetes releas of your cluster. You can select you target release from the Upgrade section
+Another typical day2 operation is to upgrade the kubernetes releas of your cluster. You can select you target release from the Upgrade section. You can follow the rolling upgrade steps also from vSphere Client.
 
 ![lab206d](../img/lab206d.png)
 
