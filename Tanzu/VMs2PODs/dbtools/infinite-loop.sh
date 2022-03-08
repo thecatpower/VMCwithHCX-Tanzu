@@ -1,9 +1,12 @@
 #!/bin/bash
 #bdereims@gmail.com
 
-. ./env
+#. ./env
 
 DB=web.txt
+USERNAME=root
+PASSWORD='VMware1!'
+DATABASE=nginx
 
 cp /dev/null $DB 
 

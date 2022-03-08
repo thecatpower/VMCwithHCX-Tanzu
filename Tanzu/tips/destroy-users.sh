@@ -2,7 +2,7 @@
 #bdereims@gmail.com
 
 
-for LINE in $(seq -f "%02g" 1 6) 
+for LINE in $(seq -f "%02g" 1 20) 
 do
 	USERNAME="room${LINE}"
 	deluser --remove-home ${USERNAME}
