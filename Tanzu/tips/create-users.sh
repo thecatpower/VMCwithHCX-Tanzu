@@ -10,7 +10,9 @@ do
 	useradd -U -G docker -m -s /bin/bash ${USERNAME}
 	chpasswd <<<"${USERNAME}:${PASSWORD}"
 	cp -R /home/grease-monkey/VMCwithHCX-Tanzu /home/${USERNAME}/.
+	cp /home/grease-monkey/.profile /home/${USERNAME}/.
 	chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/VMCwithHCX-Tanzu
+	chown ${USERNAME}:${USERNAME} /home/${USERNAME}/.profile
 done
 
 exit 0
