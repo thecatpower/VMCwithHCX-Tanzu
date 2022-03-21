@@ -32,10 +32,10 @@ spec:
         resources:
           limits:
             cpu: 200m 
-            memory: 1000Mi
+            memory: 200Mi
           requests:
             cpu: 100m
-            memory: 1000Mi
+            memory: 50Mi
         env:
           - name: MARIADB_PASSWORD
             valueFrom:
@@ -110,10 +110,10 @@ spec:
         resources:
           limits:
             cpu: 200m 
-            memory: 1000Mi
+            memory: 200Mi
           requests:
             cpu: 100m 
-            memory: 1000Mi
+            memory: 50Mi
         env:
           - name: MARIADB_PASSWORD
             valueFrom:
@@ -156,7 +156,7 @@ metadata:
   name: nginx-deployment
   namespace: ${NAMESPACE} 
 spec:
-  maxReplicas: 20
+  maxReplicas: 3 
   minReplicas: 1 
   scaleTargetRef:
     apiVersion: apps/v1 
@@ -171,10 +171,10 @@ metadata:
   name: php-fpm-deployment
   namespace: ${NAMESPACE} 
 spec:
-  maxReplicas: 20
+  maxReplicas: 4 
   minReplicas: 1
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: php-fpm-deployment
-  targetCPUUtilizationPercentage: 1 
+  targetCPUUtilizationPercentage: 2 
