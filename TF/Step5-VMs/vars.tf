@@ -44,9 +44,7 @@ variable "cloud_VM_JH" {default = "GREASE-MONKEY"}
 variable "cloud_VM_JH_VMname" {default = "grease-monkey"}
 
 
-
 variable "VM_JH_OVA" {default = "https://bucket-garage.s3.eu-central-1.amazonaws.com/template-grease-monkey.ova"}
-
 variable "VM_JH_TemplateName" {default = "GREASE-MONKEY"}
 variable "VM_JH_TemplateFolder" {default = "Templates"}
 variable "VM_JH_VMName" {default = "grease-monkey"}
