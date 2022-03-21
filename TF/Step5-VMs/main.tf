@@ -333,3 +333,40 @@ resource "vsphere_virtual_machine" "jh" {
     template_uuid = data.vsphere_content_library_item.item-JH.id
   }
 }
+
+resource "vsphere_folder" "dst_folder01" {
+  provider      = vsphere.dst
+  path          = "Workloads/Room01"
+  type          = "vm"
+  datacenter_id = data.vsphere_datacenter.cloud_dc.id
+}
+resource "vsphere_folder" "dst_folder02" {
+  provider      = vsphere.dst
+  path          = "Workloads/Room02"
+  type          = "vm"
+  datacenter_id = data.vsphere_datacenter.cloud_dc.id
+}
+resource "vsphere_folder" "dst_folder03" {
+  provider      = vsphere.dst
+  path          = "Workloads/Room03"
+  type          = "vm"
+  datacenter_id = data.vsphere_datacenter.cloud_dc.id
+}
+resource "vsphere_folder" "dst_folder04" {
+  provider      = vsphere.dst
+  path          = "Workloads/Room04"
+  type          = "vm"
+  datacenter_id = data.vsphere_datacenter.cloud_dc.id
+}
+resource "vsphere_folder" "dst_folder05" {
+  provider      = vsphere.dst
+  path          = "Workloads/Room05"
+  type          = "vm"
+  datacenter_id = data.vsphere_datacenter.cloud_dc.id
+}
+resource "vsphere_folder" "dst_folder06" {
+  provider      = vsphere.dst
+  path          = "Workloads/Room06"
+  type          = "vm"
+  datacenter_id = data.vsphere_datacenter.cloud_dc.id
+}
