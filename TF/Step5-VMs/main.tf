@@ -4,7 +4,6 @@
 ##############################################
 
 //source onprem SDDC
-/*Matteo
 provider "vsphere" {
   alias                 = "onprem"
   user                  = var.vc_onprem_user
@@ -37,89 +36,35 @@ data "vsphere_network" "onprem_network1" {
   name          = var.onprem_subnets.Name1
   datacenter_id = data.vsphere_datacenter.onprem_dc.id
 }
-*/
 
 /*======================================================
 Get Templates data
 ========================================================*/
-/*Matteo
-data "vsphere_virtual_machine" "onprem_JH" {
-  provider      = vsphere.onprem
-  name          = var.onprem_VM_JH
-  datacenter_id = data.vsphere_datacenter.onprem_dc.id
+data "vsphere_content_library" "onprem_library" {
+  provider   = vsphere.onprem
+  name       = var.onprem_ContLib
 }
-data "vsphere_virtual_machine" "onprem_VM_BE" {
-  provider      = vsphere.onprem
-  name          = var.onprem_VM_BE
-  datacenter_id = data.vsphere_datacenter.onprem_dc.id
+
+data "vsphere_content_library_item" "item-BE" {
+  provider   = vsphere.onprem
+  name       = var.onprem_VM_BE
+  type       = "ovf"
+  library_id = data.vsphere_content_library.onprem_library.id
 }
-data "vsphere_virtual_machine" "onprem_FE" {
-  provider      = vsphere.onprem
-  name          = var.onprem_VM_FE
-  datacenter_id = data.vsphere_datacenter.onprem_dc.id
+
+data "vsphere_content_library_item" "item-FE" {
+  provider   = vsphere.onprem
+  name       = var.onprem_VM_FE
+  type       = "ovf"
+  library_id = data.vsphere_content_library.onprem_library.id
 }
-*/
 
 /*======================================================
 Deploy Templates to VMs
 ========================================================*/
-/*OLD
-resource "vsphere_virtual_machine" "cloud-vm1" {
-  name             = "terraform-BE"
-  resource_pool_id = data.vsphere_resource_pool.cloud_pool.id
-  datastore_id     = data.vsphere_datastore.cloud_datastore.id
-  num_cpus = 2
-  memory   = 4096
-  guest_id = "ubuntu64Guest"
-  network_interface {
-    network_id = data.vsphere_network.cloud_network1.id
-  }
-  disk {
-    label = "disk0"
-    size  = 16
-  }
-  disk {
-    label = "disk1"
-    size  = 50
-    unit_number=1
-  }
-  clone {
-    template_uuid = data.vsphere_virtual_machine.cloud_VM_BE.id
-  }
-}*/
-
-
-
-/*OLD
-resource "vsphere_virtual_machine" "jh" {
-  provider         = vsphere.onprem
-  name             = "grease-monkey"
-  folder           = "Workloads"
-  resource_pool_id = data.vsphere_resource_pool.onprem_pool.id
-  datastore_id     = data.vsphere_datastore.onprem_datastore.id
-  num_cpus         = 2
-  memory           = 4096
-  guest_id         = "debian10_64Guest"
-  network_interface {
-    network_id = data.vsphere_network.onprem_network1.id
-  }
-  disk {
-    label = "disk0"
-    size  = 6
-  }
-  disk {
-    label = "disk1"
-    size  = 500
-    unit_number=1
-  }
-  clone {
-    template_uuid = data.vsphere_virtual_machine.onprem_JH.id
-  }
-}
-
 resource "vsphere_virtual_machine" "be" {
   provider         = vsphere.onprem
-  name             = "backend"
+  name             = var.onprem_VM_BE_VMname
   folder           = "Workloads"
   resource_pool_id = data.vsphere_resource_pool.onprem_pool.id
   datastore_id     = data.vsphere_datastore.onprem_datastore.id
@@ -139,11 +84,11 @@ resource "vsphere_virtual_machine" "be" {
     unit_number=1
   }
   clone {
-    template_uuid = data.vsphere_virtual_machine.onprem_VM_BE.id
+    template_uuid = data.vsphere_content_library_item.item-BE.id
   }
-}*/
+}
 
-/*MATTEO
+
 resource "vsphere_folder" "src_folder01" {
   provider      = vsphere.onprem
   path          = "Workloads/Room01"
@@ -199,7 +144,7 @@ resource "vsphere_virtual_machine" "fe01" {
     thin_provisioned = true
   }
   clone {
-    template_uuid = data.vsphere_virtual_machine.onprem_FE.id
+    template_uuid = data.vsphere_content_library_item.item-FE.id
   }
 }
 
@@ -221,7 +166,7 @@ resource "vsphere_virtual_machine" "fe02" {
     thin_provisioned = true
   }
   clone {
-    template_uuid = data.vsphere_virtual_machine.onprem_FE.id
+    template_uuid = data.vsphere_content_library_item.item-FE.id
   }
 }
 
@@ -243,7 +188,7 @@ resource "vsphere_virtual_machine" "fe03" {
     thin_provisioned = true
   }
   clone {
-    template_uuid = data.vsphere_virtual_machine.onprem_FE.id
+    template_uuid = data.vsphere_content_library_item.item-FE.id
   }
 }
 
@@ -265,7 +210,7 @@ resource "vsphere_virtual_machine" "fe04" {
     thin_provisioned = true
   }
   clone {
-    template_uuid = data.vsphere_virtual_machine.onprem_FE.id
+    template_uuid = data.vsphere_content_library_item.item-FE.id
   }
 }
 
@@ -287,7 +232,7 @@ resource "vsphere_virtual_machine" "fe05" {
     thin_provisioned = true
   }
   clone {
-    template_uuid = data.vsphere_virtual_machine.onprem_FE.id
+    template_uuid = data.vsphere_content_library_item.item-FE.id
   }
 }
 
@@ -309,10 +254,9 @@ resource "vsphere_virtual_machine" "fe06" {
     thin_provisioned = true
   }
   clone {
-    template_uuid = data.vsphere_virtual_machine.onprem_FE.id
+    template_uuid = data.vsphere_content_library_item.item-FE.id
   }
-}*/
-
+}
 
 
 //target cloud SDDC
@@ -349,67 +293,28 @@ data "vsphere_network" "cloud_network1" {
   name          = var.cloud_subnets.Name1
   datacenter_id = data.vsphere_datacenter.cloud_dc.id
 }
-/*MATTEO
-data "vsphere_virtual_machine" "onprem_VM_JH" {
-  provider      = vsphere.dst
-  name          = var.cloud_VM_JH
-  datacenter_id = data.vsphere_datacenter.cloud_dc.id
-}*/
-data "vsphere_host" "cloud_host" {
-  provider         = vsphere.dst
-  name             = var.cloud_host_name
-  datacenter_id    = data.vsphere_datacenter.cloud_dc.id
+
+data "vsphere_content_library" "cloud_library" {
+  provider   = vsphere.dst
+  name       = var.cloud_ContLib
 }
 
-/*MATTEO
-data "vsphere_ovf_vm_template" "OVF_VM_JH" {
-  provider         = vsphere.dst
-  name             = var.VM_JH_TemplateName
-  resource_pool_id = data.vsphere_resource_pool.cloud_pool.id
-  datastore_id     = data.vsphere_datastore.cloud_datastore.id
-  host_system_id   = data.vsphere_host.cloud_host.id
-  remote_ovf_url   = "https://bucket-garage.s3.eu-central-1.amazonaws.com/template-grease-monkey.ova"
-  ovf_network_map = {
-    "Network 1": data.vsphere_network.cloud_network1.id
-  }
-}*/
-
-/*MATTEO
-resource "vsphere_folder" "dst_folder_Templates" {
-  provider      = vsphere.dst
-  path          = "Templates"
-  type          = "vm"
-  datacenter_id = data.vsphere_datacenter.cloud_dc.id
-}*/
-resource "vsphere_virtual_machine" "JH_VM_Template" {
-  provider                    = vsphere.dst
-  name                        = var.VM_JH_TemplateName
-  resource_pool_id            = data.vsphere_resource_pool.cloud_pool.id
-  datastore_id                = data.vsphere_datastore.cloud_datastore.id
-  datacenter_id               = data.vsphere_datacenter.cloud_dc.id
-  host_system_id              = data.vsphere_host.cloud_host.id
-  folder                      = var.VM_JH_TemplateFolder
-  wait_for_guest_net_timeout  = 0
-  wait_for_guest_ip_timeout   = 0
-  ovf_deploy {
-    remote_ovf_url = "https://bucket-garage.s3.eu-central-1.amazonaws.com/template-grease-monkey.ova"
-    disk_provisioning = "thin"
-    ovf_network_map = {
-      "sddc-cgw-network-1" = data.vsphere_network.cloud_network1.id
-    }
-  }
+data "vsphere_content_library_item" "item-JH" {
+  provider   = vsphere.dst
+  name       = var.cloud_VM_JH
+  type       = "ovf"
+  library_id = data.vsphere_content_library.cloud_library.id
 }
 
-/*MATTEO
 resource "vsphere_virtual_machine" "jh" {
   provider      = vsphere.dst
-  name             = "JumpHost"
+  name             = var.cloud_VM_JH_VMname
   folder           = "Workloads"
   resource_pool_id = data.vsphere_resource_pool.cloud_pool.id
   datastore_id     = data.vsphere_datastore.cloud_datastore.id
   num_cpus = 2
   memory   = 4096
-  guest_id = "ubuntu64Guest"
+  guest_id = "debian10_64Guest"
   network_interface {
     network_id = data.vsphere_network.cloud_network1.id
   }
@@ -418,8 +323,13 @@ resource "vsphere_virtual_machine" "jh" {
     size  = 16
     thin_provisioned = true
   }
+  disk {
+    label = "disk1"
+    size  = 500
+    unit_number=1
+    thin_provisioned = true
+  }
   clone {
-    template_uuid = data.vsphere_virtual_machine.cloud_JH.id
+    template_uuid = data.vsphere_content_library_item.item-JH.id
   }
 }
-*/

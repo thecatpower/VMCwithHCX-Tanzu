@@ -32,14 +32,27 @@ variable "cloud_subnets" {
 variable "cloud_host_name" {default="10.2.0.69"}
 
 //TEMPLATES
+variable "onprem_ContLib" {default = "XPday"}
+variable "cloud_ContLib" {default = "XPday"}
+
+variable "onprem_VM_BE" {default = "BACKEND"}
+variable "onprem_VM_FE" {default = "frontend-roomxx"}
+variable "onprem_VM_BE_VMname" {default = "backend"}
+variable "onprem_VM_FE_VMname" {default = "frontend-room"}
+
+variable "cloud_VM_JH" {default = "GREASE-MONKEY"}
+variable "cloud_VM_JH_VMname" {default = "grease-monkey"}
+
+
+
 variable "VM_JH_OVA" {default = "https://bucket-garage.s3.eu-central-1.amazonaws.com/template-grease-monkey.ova"}
+
 variable "VM_JH_TemplateName" {default = "GREASE-MONKEY"}
 variable "VM_JH_TemplateFolder" {default = "Templates"}
 variable "VM_JH_VMName" {default = "grease-monkey"}
 variable "VM_JH_Folder" {default = "Workloads"}
 
-variable "onprem_VM_BE" {default = "BACKEND"}
-variable "onprem_VM_FE" {default = "FRONTEND"}
+
 
 variable "vc_onprem_user" {default = ""}
 variable "vc_onprem_pw" {default = ""}

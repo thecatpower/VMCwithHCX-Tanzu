@@ -11,10 +11,12 @@ provider "hcx" {
     alias  = "target"
     vmc_token   = var.api_token
 }
+
 resource "hcx_vmc" "vmc_xpday_target" {  
     provider = hcx.target
     sddc_id = var.sddc_id_target
 }
+
 
 ################### MESH ###################
 provider hcx {
@@ -52,7 +54,7 @@ resource "hcx_service_mesh" "HCX_SM_CtoC" {
   service {name = "VMOTION"}
   service {name = "BULK_MIGRATION"}
   service {name = "NETWORK_EXTENSION"}
-  service {name = "DISASTER_RECOVERY"}
+  //service {name = "DISASTER_RECOVERY"}
 }
 
 resource "hcx_l2_extension" "ls1" {

@@ -308,10 +308,12 @@ resource "nsxt_policy_predefined_gateway_policy" "NSX_MGW_RULESET" {
 }
 
 ################SRC COMPUTE GATEWAY################
+
 /*
 resource "nsxt_policy_fixed_segment" "NET-CGW1-OP" {
   display_name        = "sddc-cgw-network-1"
-  description         = "sddc-cgw-network-1"
+  //description         = "sddc-cgw-network-1"
+  // nsx_id =   
   connectivity_path   = "/infra/tier-1s/cgw"
   subnet {
     cidr        = "192.168.1.1/24"
@@ -323,6 +325,7 @@ resource "nsxt_policy_fixed_segment" "NET-CGW1-OP" {
   }
 }
 */
+
 
 resource "nsxt_policy_predefined_gateway_policy" "NSX_CGW_RULESET-OP" {
   path = "/infra/domains/cgw/gateway-policies/default"
